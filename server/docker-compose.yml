@@ -1,0 +1,59 @@
+version: '3.7'
+
+services:
+  server:
+    container_name: app-server
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    environment:
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
+    # volumes:
+    #   - './server:/app'
+    #   - '/app/node_modules'
+    ports:
+      - 8000:8000
+    command: ["nodemon", "index.js"]
+    develop:
+      watch:
+        - action: sync
+          path: ./
+          target: /
+          ignore:
+            - node_modules/
+            - package.json
+        - action: rebuild
+          path: package.json
+    networks:
+      - app-network
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - 'mysqlData:/var/lib/mysql'
+    ports:
+      - 33006:3306
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - app-network
+
+volumes:
+  mysqlData:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge

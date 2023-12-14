@@ -1,0 +1,14 @@
+.footer {
+    background-color: gray;
+    min-height: 4vh;
+    padding: 0.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+}
