@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  # web-scraper:
+  #   container_name: app-scraper
+  #   build:
+  #     context: ./web-scraper
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - './web-scraper:/app'
+  #     - '/app/node_modules'
+  #   ports:
+  #     - 8080:8080
+  #   networks:
+  #     - app-network
+
+networks:
+  app-network:
+    driver: bridge
