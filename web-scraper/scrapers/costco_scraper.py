@@ -74,8 +74,8 @@ class CostcoScraper(BaseScraper):
 
         return itemSpecs
 
-    def scrape(self):
-        url = "https://www.costco.ca/samsung-galaxy-tab-s9-fe%2c-10.9-in.-128gb-with-s-pen.product.4000152929.html"
+    def scrape(self, url):
+        # url = "https://www.costco.ca/samsung-galaxy-tab-s9-fe%2c-10.9-in.-128gb-with-s-pen.product.4000152929.html"
         # url = "https://www.costco.ca/realtree-woman%e2%80%99s-flannel-lined-jean.product.4000138954.html?preselect=colour%3ablack"
 
         costcoData = {}
@@ -94,6 +94,9 @@ class CostcoScraper(BaseScraper):
                 "Specifications": self.getProductSpecs(soup),
             }
 
+        except Exception as e:
+            print(f"Error scraping {url}: {str(e)}")
+            return None
         finally:
             return costcoData
 

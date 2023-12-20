@@ -15,7 +15,7 @@ def get_dynamic_source(url):
     try:
         # Open the URL
         driver.get(url)
-        time.sleep(4)
+        time.sleep(3)
 
         page_source = driver.page_source
 
