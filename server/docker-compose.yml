@@ -4,7 +4,7 @@ services:
   server:
     container_name: app-server
     build:
-      context: ./server
+      context: ./
       dockerfile: Dockerfile
     environment:
       - MYSQL_HOST=${MYSQL_HOST}
@@ -12,22 +12,22 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
-    # volumes:
-    #   - './server:/app'
-    #   - '/app/node_modules'
+    volumes:
+      - './:/app'
+      - '/app/node_modules'
     ports:
       - 8000:8000
     command: ["nodemon", "index.js"]
-    develop:
-      watch:
-        - action: sync
-          path: ./
-          target: /
-          ignore:
-            - node_modules/
-            - package.json
-        - action: rebuild
-          path: package.json
+    # command: npm start
+    # develop:
+    #   watch:
+    #     - action: sync
+    #       path: ./
+    #       target: /
+    #       ignore:
+    #         - node_modules/
+    #     - action: rebuild
+    #       path: package.json
     networks:
       - app-network
     depends_on:
