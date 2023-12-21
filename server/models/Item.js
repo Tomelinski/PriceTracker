@@ -5,13 +5,13 @@ const ITEM_ATTRIBUTES = {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        allowNull: false,
+        allowNull: true,
     },
     name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
-    details: {
+    specifications: {
         type: DataTypes.JSON,
         defaultValue: [],
     },
