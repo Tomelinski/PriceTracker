@@ -3,4 +3,4 @@ version: '3.7'
 include:
   - ./client/docker-compose.yml
   - ./server/docker-compose.yml
-  # - ./web-scraper/docker-compose.yml
+  - ./web-scraper/docker-compose.yml
