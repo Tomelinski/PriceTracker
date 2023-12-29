@@ -11,16 +11,17 @@ print(f"Running on {app.config['FLASK_RUN_HOST']}:{app.config['FLASK_RUN_PORT']}
 #     costco_scraper = CostcoScraper()
 #     result = costco_scraper.scrape()
 
-@app.route('/')
+@app.route('/item')
 def home():
-    url_param = request.args.get('url')
+    url_param = request.args.get('itemURL')
 
     if not url_param:
-        return jsonify({'error': 'URL parameter is required'})
+        return jsonify({'error': 'itemURL parameter is required'})
     
     costco_scraper = CostcoScraper()
     result = costco_scraper.scrape(url_param)
     return jsonify(result)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # app.run(debug=True)
+    app.run(host='0.0.0.0', port=app.config['FLASK_RUN_PORT'], debug=True)

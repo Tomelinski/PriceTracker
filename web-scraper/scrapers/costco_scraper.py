@@ -1,4 +1,3 @@
-import requests
 from .base_scraper import BaseScraper
 from bs4 import BeautifulSoup
 from drivers.firefox_driver import get_dynamic_source
@@ -91,7 +90,7 @@ class CostcoScraper(BaseScraper):
                 "image": self.getImage(soup),
                 "price": self.getProductPrice(soup),
                 # "Details": self.getProductDetails(soup),
-                "Specifications": self.getProductSpecs(soup),
+                "specifications": self.getProductSpecs(soup),
             }
 
         except Exception as e:
