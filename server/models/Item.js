@@ -11,6 +11,10 @@ const ITEM_ATTRIBUTES = {
         type: DataTypes.STRING,
         allowNull: true,
     },
+    retailer: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
     specifications: {
         type: DataTypes.JSON,
         defaultValue: [],
@@ -22,6 +26,10 @@ const ITEM_ATTRIBUTES = {
     siteURL: {
         type: DataTypes.STRING,
         allowNull: false,
+    },
+    imageURL: {
+        type: DataTypes.STRING,
+        allowNull: true,
     },
     createdAt: {
       allowNull: false,

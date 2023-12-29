@@ -1,37 +1,59 @@
 const axios = require("axios");
 const { sequelize, Item } = require("../models");
 const { development } = require("../database/config/config");
+const { response } = require("express");
 
 const getItem = async (req, res) => {
-  let result;
+    let result;
+  
+    try {
+      result = await sequelize.transaction(async (t) => {
+        const itemURL = req.query.itemURL;
+        const [item, created] = await Item.findOrCreate({
+          where: { siteURL: itemURL },
+          transaction: t,
+        });
+  
+        if (created) {
+          const scraperURL = `${development.webScraper}/item`;
+          const axiosResponse = await axios.get(scraperURL, {
+            params: { itemURL: itemURL },
+          });
+  
+          if (axiosResponse.data) {
+            console.log(axiosResponse.data)
+            const { title, retailer, specifications, image, price } = axiosResponse.data;
 
-  try {
-    result = await sequelize.transaction(async (t) => {
-      const itemURL = req.query.itemURL;
-      const [item, created] = await Item.findOrCreate({
-        where: { siteURL: itemURL },
-        transaction: t, // Pass transaction to findOrCreate
+            const currentDate = new Date().toISOString();
+            const priceHistory = [{ price, date: currentDate }];
+            console.log(specifications);
+            console.log(priceHistory);
+  
+            const updatedItem = await item.update({
+              name: title || null,
+              retailer: retailer || null,
+              specifications: specifications || {},
+              priceHistory: priceHistory,
+              imageURL: image || null,
+            }, { transaction: t });
+  
+            console.log(updatedItem);
+          }
+        }
+  
+        console.log(item);
+  
+        return item ?? {};
       });
-
-      // if (!item) {
-      //     item = Item.create({ siteURL: req.body.itemURL });
-      // }
-      if (created) {
-        const url = development.webScraper;
-        const response = await axios.get(url, { params: { url: itemURL } });
-
-        console.log(response.data);
-      }
-
-      return item;
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-    return; // Don't proceed further if there's an error
-  }
-
-  res.json(result); // Now you can access the result outside the try-catch block
-};
+    } catch (error) {
+      // Rollback the transaction on error
+      console.error("Error during transaction:", error);
+      res.status(500).json({ error: error.message });
+      return;
+    }
+  
+    res.json(result);
+  };
 
 module.exports = {
   getItem,
