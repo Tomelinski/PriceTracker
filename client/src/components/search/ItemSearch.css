@@ -1,0 +1,43 @@
+.search-container {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.15);
+  transition: background-color 0.3s ease;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-container:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+@media (min-width: "sm") {
+  .search-container {
+    margin-left: 3;
+    width: auto;
+  }
+}
+
+/* SearchIconWrapper Class */
+.search-icon-wrapper {
+  height: 100%;
+  pointer-events: none;
+  margin: 0 5px;
+  display: flex;
+}
+
+.styled-input-base {
+  color: inherit;
+  padding: 2px 0 0 0;
+}
+
+.styled-input-base .MuiInputBase-input {
+  width: 100%;
+}
+
+@media (min-width: "md") {
+  .styled-input-base .MuiInputBase-input {
+    width: 20;
+  }
+}

@@ -1,4 +1,5 @@
 import { api } from "./Config";
+import { SERVER_ROUTE } from './Constants';
 
 export const fetchUsers = async (page = 1, limit = 10) => {
   try {
@@ -11,3 +12,14 @@ export const fetchUsers = async (page = 1, limit = 10) => {
     return [];
   }
 };
+
+export const fetchItem = async (itemURL) => {
+  try {
+    return await api.get(SERVER_ROUTE.ITEM, {
+      params: { itemURL: itemURL },
+    }).then((response) => response.data);
+  } catch (error) {
+    console.error('Error fetching Item Data:', error);
+    return;
+  }
+}

@@ -1,4 +1,5 @@
 import * as React from "react";
+// import './Nav.css';
 import {
   AppBar,
   Box,
@@ -12,12 +13,13 @@ import {
   MenuItem,
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import MenuIcon from '@mui/icons-material/Menu';
 import AdbIcon from '@mui/icons-material/Adb';
+import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { AuthContext } from "../../context/authContext";
 import { NavLink } from "react-router-dom";
 import { AUTH_ROUTE, ROUTE } from "../../constants/Constants";
+import { ItemSearch } from "../search";
 
 const pages = ["Home"];
 const settings = ["Profile", "Settings", "Logout"];
@@ -81,7 +83,9 @@ const Nav2 = () => {
           >
             LOGO
           </Typography>
-
+          <Box>
+            <ItemSearch />
+          </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -135,7 +139,7 @@ const Nav2 = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            LOGOs
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (

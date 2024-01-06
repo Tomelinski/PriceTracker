@@ -5,6 +5,7 @@ const SERVER_ROUTE = {
     REGISTER: '/auth/register',
     LOGOUT: '/auth/logout',
     USER: '/auth/user',
+    ITEM: '/api/item',
 }
 
 export { SERVER_ROUTE };

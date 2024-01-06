@@ -6,6 +6,7 @@ import { Login, LoginSuccess, Register } from './components/user/Auth';
 import { logout as authLogout } from "./api/Auth";
 import { Nav2 } from "./components/nav";
 import { Home } from "./components/common/Home";
+import { ItemPage } from "./components/common/Item";
 import { AUTH_ROUTE, ROUTE } from './constants/Constants';
 
 let logoutTimer;
@@ -79,6 +80,7 @@ const App = () => {
     routes = (
       <Routes>
         <Route path={ROUTE.HOME} element={<Home />} />
+        <Route path={ROUTE.ITEM} element={<ItemPage />} />
         <Route path="*" element={<Navigate to={ROUTE.HOME} />} />
       </Routes>
     );

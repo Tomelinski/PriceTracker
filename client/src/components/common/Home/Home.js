@@ -1,5 +1,7 @@
 import React from "react";
-import { Box, Stack, Button } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
+import { ItemSearch } from "../../search";
+import ItemPage from "../Item/ItemPage";
 
 const Home = () => {
   
@@ -8,13 +10,21 @@ const Home = () => {
   };
 
   return (
-    <>
-      <Box sx={{ width: "100%", maxWidth: 500 }}>
-        <Stack spacing={2} direction="row">
-          <Button variant="outlined" onClick={clickHandler}>Text Here</Button>
-        </Stack>
-      </Box>
-    </>
+    <Grid container justifyContent="center">
+      <Grid item xs={12} md={6}>
+        <Box mt={3}>
+          <Typography variant="h4" align="center">
+            Home
+          </Typography>
+        </Box>
+        <Box mt={3}>
+          <ItemSearch />
+        </Box>
+        <Box>
+          <ItemPage />
+        </Box>
+      </Grid>
+    </Grid>
   );
 };
 
