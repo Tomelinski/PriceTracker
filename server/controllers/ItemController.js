@@ -1,7 +1,6 @@
 const axios = require("axios");
 const { sequelize, Item } = require("../models");
 const { development } = require("../database/config/config");
-const { response } = require("express");
 
 const getItem = async (req, res) => {
     let result;
@@ -26,13 +25,12 @@ const getItem = async (req, res) => {
 
             const currentDate = new Date().toISOString();
             const priceHistory = [{ price, date: currentDate }];
-            console.log(specifications);
-            console.log(priceHistory);
   
             const updatedItem = await item.update({
               name: title || null,
               retailer: retailer || null,
               specifications: specifications || {},
+              price: price || null,
               priceHistory: priceHistory,
               imageURL: image || null,
             }, { transaction: t });
@@ -40,8 +38,6 @@ const getItem = async (req, res) => {
             console.log(updatedItem);
           }
         }
-  
-        console.log(item);
   
         return item ?? {};
       });
@@ -52,6 +48,7 @@ const getItem = async (req, res) => {
       return;
     }
   
+    console.log(result);
     res.json(result);
   };
 

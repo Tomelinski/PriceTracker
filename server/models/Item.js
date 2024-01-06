@@ -19,6 +19,11 @@ const ITEM_ATTRIBUTES = {
         type: DataTypes.JSON,
         defaultValue: [],
     },
+    price: {
+        type: DataTypes.DECIMAL(12,2),
+        defaultValue: null,
+        allowNull: true,
+    },
     priceHistory: {
         type: DataTypes.JSON,
         defaultValue: [],
