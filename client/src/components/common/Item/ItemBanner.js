@@ -16,10 +16,8 @@ export default function ItemBanner(props) {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        // backgroundImage: `url(${product.imageURL})`,
       }}
     >
-      {/* Increase the priority of the hero background image */}
       <Box
         sx={{
           position: 'absolute',

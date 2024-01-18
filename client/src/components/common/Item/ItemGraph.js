@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import ItemLegend from "./ItemLegend";
-import {
-  Paper,
-  Grid,
-  Typography,
-  Divider,
-} from "@mui/material";
+import { Paper, Grid, Typography, Divider } from "@mui/material";
 
 import Plotly from "plotly.js-dist";
 
 export default function ItemGraph({ priceHistory, retailer }) {
-  const [ dates, setDates] = useState([]);
-  const [ prices, setPrices] = useState([]);
+  const [dates, setDates] = useState([]);
+  const [prices, setPrices] = useState([]);
 
-  const [ graph, setGraph ] = useState([]); 
+  const [graph, setGraph] = useState([]);
 
-  const [legend, setLegend] = useState({"Highest": 0, "Lowest": 0, "Average": 0, "Current": 0});
+  const [legend, setLegend] = useState({
+    Highest: 0,
+    Lowest: 0,
+    Average: 0,
+    Current: 0,
+  });
   const CHART_COLORS = ["red", "green", "Blue", "green"];
   const CHART_NAMES = ["Highest", "Lowest", "Average", "Price History"];
 
@@ -23,26 +23,14 @@ export default function ItemGraph({ priceHistory, retailer }) {
   const hoverDoted = (name) => `${name} <i>Price</i>: $%{y:.2f}`;
 
   const makeGraph = (name, color = "blue") => {
-    let yVal = [];
-    let dash = null;
-    switch (name) {
-      case "Highest":
-        yVal = Array(prices.length).fill(legend.Highest);
-        dash = "dash";
-        break;
-      case "Lowest":
-        yVal = Array(prices.length).fill(legend.Lowest);
-        dash = "dash";
-        break;
-      case "Average":
-        yVal = Array(prices.length).fill(legend.Average);
-        dash = "dash";
-        break;
-      default:
-        yVal = prices;
-        dash = null;
-        break;
-    }
+    const yVal =
+      name === "Highest" || name === "Lowest" || name === "Average"
+        ? Array(prices.length).fill(legend[name])
+        : prices;
+
+    const dash = ["Highest", "Lowest", "Average"].includes(name)
+      ? "dash"
+      : null;
 
     setGraph((g) => [
       ...g,
@@ -65,7 +53,7 @@ export default function ItemGraph({ priceHistory, retailer }) {
         textposition: "middle right",
         showlegend: false,
         type: "scatter",
-      }
+      },
     ]);
   };
 
@@ -75,14 +63,14 @@ export default function ItemGraph({ priceHistory, retailer }) {
     setDates(updatedDates);
     setPrices(updatedPrices);
   }, [priceHistory]);
-  
+
   useEffect(() => {
     if (prices.length > 0) {
       setLegend({
-        "Highest": Math.max(...prices),
-        "Lowest": Math.min(...prices),
-        "Average": getAverage(prices),
-        "Current": prices.slice(-1)[0],
+        Highest: Math.max(...prices),
+        Lowest: Math.min(...prices),
+        Average: getAverage(prices),
+        Current: prices.slice(-1)[0],
       });
     }
   }, [prices]);
@@ -93,7 +81,7 @@ export default function ItemGraph({ priceHistory, retailer }) {
         makeGraph(name, CHART_COLORS[i]);
       });
     }
-    }, [legend]);
+  }, [legend]);
 
   useEffect(() => {
     const padding = yPadding(prices);
@@ -131,7 +119,7 @@ export default function ItemGraph({ priceHistory, retailer }) {
         rangeselector: selectorOptions,
       },
       yaxis: {
-        range: [(legend.Lowest - padding), (legend.Highest + padding)],
+        range: [legend.Lowest - padding, legend.Highest + padding],
         fixedrange: true,
         tickformat: "$,d",
       },
@@ -157,7 +145,7 @@ export default function ItemGraph({ priceHistory, retailer }) {
     );
     const average = data.length > 0 ? sum / data.length : 0;
 
-  return average.toFixed(2);
+    return average.toFixed(2);
   };
 
   const yPadding = (data) => {
