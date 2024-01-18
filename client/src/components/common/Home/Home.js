@@ -11,13 +11,13 @@ const Home = () => {
 
   return (
     <Grid container justifyContent="center">
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={10}>
         <Box mt={3}>
           <Typography variant="h4" align="center">
             Home
           </Typography>
         </Box>
-        <Box mt={3}>
+        <Box mt={3} mb={3}>
           <ItemSearch />
         </Box>
         <Box>

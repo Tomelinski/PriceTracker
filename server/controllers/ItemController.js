@@ -23,7 +23,7 @@ const getItem = async (req, res) => {
             console.log(axiosResponse.data)
             const { title, retailer, specifications, image, price } = axiosResponse.data;
 
-            const currentDate = new Date().toISOString();
+            const currentDate = new Date().toISOString().split('T')[0];
             const priceHistory = [{ price, date: currentDate }];
   
             const updatedItem = await item.update({

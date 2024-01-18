@@ -31,11 +31,11 @@ export default function ItemBanner(props) {
         }}
       />
       <Grid container justifyContent="center">
-        <Box>
+        <Box sx={{ width: 350 }}>
             {<img src={product.imageURL} alt={product.name} />}
         </Box>
         <Grid item md={6}>
-          <Box>
+          <Box p={3} >
             <Box>
                 <Typography component="h1" variant="h5" align="left" color="inherit" gutterBottom>
                     {product.name}
