@@ -4,14 +4,22 @@ const { development } = require("../database/config/config");
 
 const getItem = async (req, res) => {
     let result;
+    const itemId = req.params.itemId ?? null;
+    const itemURL = req.query.itemURL ?? null;
+    console.log(itemId, itemURL);
   
     try {
       result = await sequelize.transaction(async (t) => {
-        const itemURL = req.query.itemURL;
-        const [item, created] = await Item.findOrCreate({
-          where: { siteURL: itemURL },
-          transaction: t,
-        });
+        let created = null;
+        let item = {};
+        if (itemURL) {
+          [item, created] = await Item.findOrCreate({
+            where: { siteURL: itemURL },
+            transaction: t,
+          });
+        } else if (itemId) {
+          item = await Item.findByPk(itemId, { transaction: t });
+        }
   
         if (created) {
           const scraperURL = `${development.webScraper}/item`;
@@ -20,7 +28,6 @@ const getItem = async (req, res) => {
           });
   
           if (axiosResponse.data) {
-            console.log(axiosResponse.data)
             const { title, retailer, specifications, image, price } = axiosResponse.data;
 
             const currentDate = new Date().toISOString().split('T')[0];
@@ -34,12 +41,11 @@ const getItem = async (req, res) => {
               priceHistory: priceHistory,
               imageURL: image || null,
             }, { transaction: t });
-  
-            console.log(updatedItem);
           }
         }
   
-        return item ?? {};
+        console.log(item);
+        return item;
       });
     } catch (error) {
       // Rollback the transaction on error
@@ -48,7 +54,6 @@ const getItem = async (req, res) => {
       return;
     }
   
-    console.log(result);
     res.json(result);
   };
 

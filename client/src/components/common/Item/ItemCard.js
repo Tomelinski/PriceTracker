@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Card,CardActions,CardContent,CardMedia,Button,Typography } from "@mui/material";
 
-export default function ItemCard(props) {
+const ItemCard = (props) => {
   const { item } = props;
 
     return (
@@ -22,3 +22,5 @@ export default function ItemCard(props) {
       </Card>
     );
   }
+
+export default ItemCard;

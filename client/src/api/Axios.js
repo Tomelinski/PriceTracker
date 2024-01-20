@@ -13,11 +13,23 @@ export const fetchUsers = async (page = 1, limit = 10) => {
   }
 };
 
-export const fetchItem = async (itemURL) => {
+export const fetchItem = async (itemId, itemURL) => {
   try {
-    return await api.get(SERVER_ROUTE.ITEM, {
-      params: { itemURL: itemURL },
-    }).then((response) => response.data);
+    let url;
+    let params;
+
+    if (itemId) {
+      url = `${SERVER_ROUTE.ITEM}/${itemId}`;
+      params = null
+    } else if (itemURL) {
+      url = SERVER_ROUTE.ITEM;
+      params = { itemURL: itemURL }
+    } else {
+      throw new Error('Either itemId or itemURL must be provided.');
+    }
+
+    console.log(url, params);
+    return await api.get(url, { params: params });
   } catch (error) {
     console.error('Error fetching Item Data:', error);
     return;

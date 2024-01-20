@@ -4,7 +4,7 @@ import { Paper, Grid, Typography, Divider } from "@mui/material";
 
 import Plotly from "plotly.js-dist";
 
-export default function ItemGraph({ priceHistory, retailer }) {
+const ItemGraph = ({ priceHistory, retailer }) => {
   const [dates, setDates] = useState([]);
   const [prices, setPrices] = useState([]);
 
@@ -190,3 +190,5 @@ export default function ItemGraph({ priceHistory, retailer }) {
     </Paper>
   );
 }
+
+export default ItemGraph;

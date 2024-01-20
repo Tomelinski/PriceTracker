@@ -88,6 +88,7 @@ const App = () => {
     routes = (
       <Routes>
         <Route path={ROUTE.HOME} element={<Home />} />
+        <Route path={`${ROUTE.ITEM}/:productID`} element={<ItemPage />} />
         <Route path={AUTH_ROUTE.LOGIN} element={<Login />} />
         <Route path={AUTH_ROUTE.REGISTER} element={<Register />} />
         <Route path={AUTH_ROUTE.LOGIN_SUCCESS} element={<LoginSuccess />} />

@@ -23,7 +23,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     },
   }));
 
-export default function ItemSpecList(props) {
+const ItemSpecList = (props) => {
     const { specs } = props;
 
     return (
@@ -39,3 +39,5 @@ export default function ItemSpecList(props) {
         </>
     );
 }
+
+export default ItemSpecList;

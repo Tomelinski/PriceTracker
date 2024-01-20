@@ -3,8 +3,7 @@ import { Paper, Typography, Grid, Link, Box, Button  } from "@mui/material";
 import { Table, TableBody, TableContainer } from "@mui/material";
 import ItemSpecList from './ItemSpecList';
 
-
-export default function ItemBanner(props) {
+const ItemBanner = (props) => {
     const { product } = props;
 
   return (
@@ -66,3 +65,4 @@ export default function ItemBanner(props) {
     </Paper>
   );
   }
+  export default ItemBanner;

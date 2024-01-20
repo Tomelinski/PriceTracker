@@ -1,18 +1,23 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./ItemSearch.css";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import { fetchItem } from "../../api/Axios";
+import { ROUTE } from "../../constants/Constants";
 
 const ItemSearch = () => {
+  const navigate = useNavigate();
     const [productURL, setProductURL] = useState();
 
     const handleSearch = async (e) => {
         e.preventDefault();
 
         try {
-            await fetchItem(productURL).then((res) => {
-                console.log(res);
+            await fetchItem(null, productURL).then((res) => {
+              if (res.status === 200) {
+                navigate(`${ROUTE.ITEM}/${res.data.id}`, { state: { itemObject: res.data } });
+              }
             });
         } catch(err){
             console.log("Error: " + err)

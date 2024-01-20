@@ -8,7 +8,7 @@ const AUTH_ROUTE = {
 
 const ROUTE = {
   HOME: '/',
-  ITEM: '/item',
+  ITEM: '/product',
 };
 
 const SETTINGS_ROUTE = {

@@ -4,10 +4,6 @@ import { ItemSearch } from "../../search";
 import ItemPage from "../Item/ItemPage";
 
 const Home = () => {
-  
-  const clickHandler = () => {
-    
-  };
 
   return (
     <Grid container justifyContent="center">
@@ -19,9 +15,6 @@ const Home = () => {
         </Box>
         <Box mt={3} mb={3}>
           <ItemSearch />
-        </Box>
-        <Box>
-          <ItemPage />
         </Box>
       </Grid>
     </Grid>
