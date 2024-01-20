@@ -6,7 +6,6 @@ const getItem = async (req, res) => {
     let result;
     const itemId = req.params.itemId ?? null;
     const itemURL = req.query.itemURL ?? null;
-    console.log(itemId, itemURL);
   
     try {
       result = await sequelize.transaction(async (t) => {
@@ -44,7 +43,6 @@ const getItem = async (req, res) => {
           }
         }
   
-        console.log(item);
         return item;
       });
     } catch (error) {
