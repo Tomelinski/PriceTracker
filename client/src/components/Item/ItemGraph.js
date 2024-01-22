@@ -189,6 +189,6 @@ const ItemGraph = ({ priceHistory, retailer }) => {
       <Grid id="graph" container></Grid>
     </Paper>
   );
-}
+};
 
 export default ItemGraph;

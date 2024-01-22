@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import { ItemSearch } from "../../search";
-import ItemPage from "../Item/ItemPage";
+import QuickTips from "../../tips/QuickTips";
 
 const Home = () => {
 
@@ -15,6 +15,15 @@ const Home = () => {
         </Box>
         <Box mt={3} mb={3}>
           <ItemSearch />
+        </Box>
+        
+      </Grid>
+      <Grid item xs={6}>
+      <Box mt={3} mb={3} xs={6}>
+          <Typography  variant="h4" align="center">
+            Quick Tips
+          </Typography>
+          <QuickTips />
         </Box>
       </Grid>
     </Grid>
