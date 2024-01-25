@@ -9,7 +9,8 @@
     "fresh:migrate": "npx sequelize-cli db:migrate",
     "fresh:seed": "npx sequelize-cli db:seed:all",
     "fresh": "npm run fresh:create-db && npm run fresh:migrate && npm run fresh:seed",
-    "docker:fresh": "docker exec -it app-server npm run fresh"
+    "docker:fresh": "docker exec -it app-server npm run fresh",
+    "docker:flyer": "docker exec -it app-server npm run fresh"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +30,7 @@
     "sequelize": "^6.35.0"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "sequelize-cli": "^6.6.2"
   }
 }

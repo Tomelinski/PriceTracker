@@ -5,7 +5,7 @@ const ITEM_ATTRIBUTES = {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        allowNull: true,
+        allowNull: false,
     },
     name: {
         type: DataTypes.STRING,
@@ -14,6 +14,10 @@ const ITEM_ATTRIBUTES = {
     retailer: {
         type: DataTypes.STRING,
         allowNull: true,
+    },
+    inStoreOnly: {
+        type: DataTypes.BOOLEAN,
+        default: false
     },
     specifications: {
         type: DataTypes.JSON,

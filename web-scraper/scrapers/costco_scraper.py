@@ -74,10 +74,8 @@ class CostcoScraper(BaseScraper):
         return itemSpecs
 
     def scrape(self, url):
-        # url = "https://www.costco.ca/samsung-galaxy-tab-s9-fe%2c-10.9-in.-128gb-with-s-pen.product.4000152929.html"
-        # url = "https://www.costco.ca/realtree-woman%e2%80%99s-flannel-lined-jean.product.4000138954.html?preselect=colour%3ablack"
-
         costcoData = {}
+        retailer = "Costco Canada"
         source = get_dynamic_source(url)
 
         try:
@@ -85,7 +83,7 @@ class CostcoScraper(BaseScraper):
 
             costcoData = {
                 "url": url,
-                "retailer": "Costco Canada",
+                "retailer": retailer,
                 "title": self.getProductName(soup),
                 "image": self.getImage(soup),
                 "price": self.getProductPrice(soup),
@@ -98,5 +96,4 @@ class CostcoScraper(BaseScraper):
             return None
         finally:
             return costcoData
-
-    
+        

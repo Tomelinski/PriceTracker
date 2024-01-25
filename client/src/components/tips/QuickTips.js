@@ -36,7 +36,7 @@ const QuickTips = () => {
     // console.log(title, description);
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} >
       <Table aria-label="Quick tips">
         <TableBody>
           {QUICK_TIPS.map(({title, description}) => (
