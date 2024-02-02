@@ -2,6 +2,7 @@ from scrapers.costco_scraper import CostcoScraper
 from scrapers.costco_flyer_scraper import CostcoFlyerScraper
 from flask import Flask, jsonify, request
 from config import Config
+from datetime import date
 import json
 
 app = Flask(__name__)
@@ -33,11 +34,11 @@ def flyer():
     
     costco_flyer_scraper = CostcoFlyerScraper()
     result = costco_flyer_scraper.scrape(url_param)
-    with open("response.log", "w+") as flier_log:
-        flier_log.write(json.dumps(result, indent=2))
+    log_file_path = f'./logs/response_log_{date.today()}.log'
+    with open(log_file_path, "w+") as response_log:
+        response_log.write(json.dumps(result, indent=2))
     return jsonify(result)
 
 if __name__ == "__main__":
     # app.run(debug=True)
     app.run(host='0.0.0.0', port=app.config['FLASK_RUN_PORT'], debug=True)
-

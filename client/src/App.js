@@ -8,6 +8,7 @@ import { Nav2 } from "./components/nav";
 import { Home } from "./components/common/Home";
 import { ItemPage } from "./components/Item";
 import { AUTH_ROUTE, ROUTE } from './constants/Constants';
+import { Grid } from '@mui/material';
 
 let logoutTimer;
 
@@ -109,7 +110,11 @@ const App = () => {
         }}
       >
           <Nav2 />
-          {routes}  
+          <Grid container justifyContent="center">
+            <Grid item xs={12} md={10}>
+              {routes}  
+            </Grid>
+          </Grid>
       </AuthContext.Provider>
     </div>
   );

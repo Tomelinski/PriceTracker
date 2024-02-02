@@ -3,6 +3,7 @@ import { useParams, useLocation } from "react-router-dom";
 import { fetchItem } from "../../api/Axios";
 import ItemBanner from "./ItemBanner";
 import ItemGraph from "./ItemGraph";
+import { Box } from "@mui/material";
 
 // const product = {
 //     "name": "Samsung Galaxy Tab S9 FE, 10.9 in. 128gb with S-Pen",
@@ -39,7 +40,7 @@ const ItemPage = () => {
   }, [productID, itemObject]);
 
   return (
-    <div>
+    <Box mt={3}>
       {product ? (
         <>
           <ItemBanner product={product} />
@@ -51,7 +52,7 @@ const ItemPage = () => {
       ) : (
         <>...Loading</>
       )}
-    </div>
+    </Box>
   );
 };
 

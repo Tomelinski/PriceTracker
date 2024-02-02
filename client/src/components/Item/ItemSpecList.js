@@ -29,8 +29,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-const ItemSpecList = (props) => {
-  const { specs } = props;
+const ItemSpecList = ({ specs }) => {
 
   return (
     <TableContainer component={Paper}>

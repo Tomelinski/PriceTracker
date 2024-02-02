@@ -42,18 +42,40 @@ class CostcoFlyerScraper(BaseScraper):
     
     def getProductPrice(self, soup):
         try:
-            price_tag = soup.find("span", class_="eco-priceTable")
+            price_tags = soup.find_all("span", class_="eco-priceTable")
 
-            if price_tag:
-                price_text = price_tag.text.strip()
-                numeric_price = float(price_text.replace('$', '').replace(',', ''))
-                return numeric_price
+            if len(price_tags) >= 2:
+                original_price_text = price_tags[0].text.strip()
+                current_price_text = price_tags[2].text.strip()
+
+                # Process prices
+                original_price = float(original_price_text.replace('$', '').replace(',', ''))
+                current_price = float(current_price_text.replace('$', '').replace(',', ''))
+
+                # Return a dictionary with original and current prices
+                return {"original_price": original_price, "current_price": current_price}
             else:
-                return "Price not found"
+                return {"error": "Price not found"}
         except Exception as e:
             print(f"Error extracting price: {str(e)}")
-            return "Error extracting price"
+            return {"error": "Error extracting price"}
+        
+    def getFlyerDates(self, soup):
+        try:
+            dates_tags = soup.find("span", class_="CLP-validdates")
 
+            if dates_tags:
+                time_elements = dates_tags.find_all("time")
+
+                date1 = time_elements[0]["datetime"]
+                date2 = time_elements[1]["datetime"]
+
+                return {"startDate": date1, "endDate": date2}
+            else:
+                return {"error": "Dates not found"}
+        except Exception as e:
+            print(f"Error extracting dates: {str(e)}")
+            return {"error": "Error extracting dates"}
 
     def scrape(self, url):
         costcoData = []
@@ -80,20 +102,22 @@ class CostcoFlyerScraper(BaseScraper):
             if item_array:
                 for item in item_array:
                     url = self.getURL(item)
-                    price = self.getProductPrice(item)
+                    price_info = self.getProductPrice(item)
 
-                    # if url is None or url == "url not found":
-                    #     continue
+                    if "error" in price_info:
+                        continue  # Skip processing this item if there was an error extracting the price
 
-                    if price is None or price == "Price not found":
-                        continue
+                    original_price = price_info.get("original_price")
+                    current_price = price_info.get("current_price")
 
                     costcoData.append({
                         "url": str(url),
                         "retailer": str(retailer),
+                        "flyerDates": self.getFlyerDates(item),
                         "title": str(self.getProductName(item)),
                         "image": str(self.getImage(item)),
-                        "price": price,
+                        "originalPrice": original_price,
+                        "price": current_price,
                         "specifications": None,
                     })
 

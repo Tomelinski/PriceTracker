@@ -1,8 +1,10 @@
 const axios = require("axios");
 const { sequelize, Item } = require("../models");
 const { development } = require("../database/config/config");
+const paginate = require("../helpers/route/pagination");
 
 const getItem = async (req, res) => {
+  console.log("request got here.");
   let result;
   const itemId = req.params.itemId ?? null;
   const itemURL = req.query.itemURL ?? null;
@@ -134,7 +136,25 @@ const getFlyer = async (req, res) => {
   res.json(true);
 };
 
+const getFlyerDeals = async (req, res) => {
+  try {
+    const inStoreOnly = req.query.inStoreOnly === 'true' || false;
+    const page = req.query.page || 1;
+    const limit = req.query.limit || 3;
+
+    const conditions = inStoreOnly && { inStoreOnly };
+
+    const { totalCount, data } = await paginate(Item, conditions, page, limit);
+
+    res.json({ totalCount, data });
+  } catch (error) {
+    console.error('Error fetching flyer deals:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+
 module.exports = {
   getItem,
   getFlyer,
+  getFlyerDeals,
 };

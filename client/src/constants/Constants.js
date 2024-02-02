@@ -16,6 +16,8 @@ const SETTINGS_ROUTE = {
     LOGOUT: { title: "Logout", url: AUTH_ROUTE.LOGOUT }
 };
 
+const DEAL_LIMIT = 3;
+
 const QUICK_TIPS = [
   {
     title: ".99",
@@ -43,4 +45,4 @@ const QUICK_TIPS = [
   }
 ];
 
-export { AUTH_ROUTE, ROUTE, SETTINGS_ROUTE, QUICK_TIPS };
+export { AUTH_ROUTE, ROUTE, SETTINGS_ROUTE, QUICK_TIPS, DEAL_LIMIT };

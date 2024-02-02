@@ -2,8 +2,8 @@ import * as React from "react";
 import { Paper, Typography, Grid, Link, Box, Button } from "@mui/material";
 import ItemSpecList from "./ItemSpecList";
 
-const ItemBanner = (props) => {
-  const { product } = props;
+const ItemBanner = ({product}) => {
+  const { name, imageURL, price, inStoreOnly, specifications, siteURL, retailer } = product;
 
   return (
     <Paper
@@ -28,7 +28,7 @@ const ItemBanner = (props) => {
       />
       <Grid container justifyContent="center">
         <Box sx={{ width: 350 }}>
-          {<img src={product.imageURL} alt={product.name} />}
+          {<img src={imageURL} alt={name} />}
         </Box>
         <Grid item md={6}>
           <Box p={3}>
@@ -40,7 +40,7 @@ const ItemBanner = (props) => {
                 color="inherit"
                 gutterBottom
               >
-                {product.name}
+                {name}
               </Typography>
             </Box>
             <Box>
@@ -51,22 +51,22 @@ const ItemBanner = (props) => {
                 color="inherit"
                 gutterBottom
               >
-                Price: {product.price}
+                Price: {price}
               </Typography>
             </Box>
             <Box mb={3}>
-              <ItemSpecList specs={product.specifications} />
+              <ItemSpecList specs={specifications} />
             </Box>
             <Box>
-              <Button variant="contained" size="large">
+              <Button variant="contained" size="large" {...(inStoreOnly ? {disabled: true} : {})}>
                 <Link
                   variant="body2"
                   underline="none"
                   rel="noreferrer"
                   color="yellow"
-                  href={product.siteURL}
+                  href={siteURL}
                 >
-                  View on {product.retailer}
+                  {(inStoreOnly ? `${retailer} In store only deal` : `View on ${retailer}`)}
                 </Link>
               </Button>
             </Box>

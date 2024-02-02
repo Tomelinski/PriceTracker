@@ -35,3 +35,17 @@ export const fetchItem = async (itemId, itemURL) => {
     return;
   }
 }
+
+export const fetchDealItems = async (inStoreOnly = false, limit, page = 1) => {
+  try {
+    const url = SERVER_ROUTE.FLYER_DEALS;
+    const params = { inStoreOnly, limit, page };
+
+    const response = await api.get(url, { params });
+
+    return response.data; 
+  } catch (error) {
+    console.error('Error fetching Deal Item Data:', error);
+    return null;
+  }
+};

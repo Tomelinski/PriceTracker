@@ -6,7 +6,6 @@ const passport = require("passport");
 const cookieSession = require("cookie-session");
 
 const routes = require('./routes');
-const paginationMiddleware = require('./middlewares/pagination');
 
 require("./helpers/auth/googleStrategy");
 require("./helpers/auth/localStrategy");
@@ -29,9 +28,6 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-//middlewares
-app.use(paginationMiddleware);
 
 app.use(routes);
 

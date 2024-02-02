@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm ci
 RUN npm install -g nodemon
 
-EXPOSE 3000
+EXPOSE 8000
 
 # start app
 # CMD ["npm", "start"]

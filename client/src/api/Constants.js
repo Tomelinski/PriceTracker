@@ -6,6 +6,7 @@ const SERVER_ROUTE = {
     LOGOUT: '/auth/logout',
     USER: '/auth/user',
     ITEM: '/api/item',
+    FLYER_DEALS: '/api/flyerDeals',
 }
 
 export { SERVER_ROUTE };

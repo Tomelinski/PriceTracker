@@ -10,19 +10,19 @@ const ItemSearch = () => {
   const navigate = useNavigate();
     const [productURL, setProductURL] = useState();
 
-    const handleSearch = async (e) => {
-        e.preventDefault();
+  const handleSearch = async (e) => {
+      e.preventDefault();
 
-        try {
-            await fetchItem(null, productURL).then((res) => {
-              if (res.status === 200) {
-                navigate(`${ROUTE.ITEM}/${res.data.id}`, { state: { itemObject: res.data } });
-              }
-            });
-        } catch(err){
-            console.log("Error: " + err)
-        }
-    }
+      try {
+          await fetchItem(null, productURL).then((res) => {
+            if (res.status === 200) {
+              navigate(`${ROUTE.ITEM}/${res.data.id}`, { state: { itemObject: res.data } });
+            }
+          });
+      } catch(err){
+          console.log("Error: " + err)
+      }
+  }
 
   return (
     <form onSubmit={handleSearch}>
