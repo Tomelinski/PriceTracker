@@ -6,6 +6,7 @@ import {
   CardMedia,
   Button,
   Typography,
+  Box,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "../../constants/Constants";
@@ -24,20 +25,28 @@ const ItemCard = ({ item }) => {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia sx={{ height: 140 }} image={imageURL} title="Costco Item" />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {name}
-        </Typography>
-        <Typography variant="body2">Price: {price}</Typography>
-      </CardContent>
-      <CardActions>
-        <Button href={siteURL} size="small">
-          Visit Costco
-        </Button>
-        <Button onClick={handleRedirect} size="small">
+    <Card sx={{ maxWidth: 375 }}>
+        <CardMedia component="img" sx={{ objectFit: "contain", height: 250, margin: '.5em .1em' }} image={imageURL} title="Costco Item" />
+        <CardContent 
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            height: "110px",
+            padding: '1em',
+          }}
+          align='left'
+        >
+          <Typography gutterBottom variant="h6">
+            {name}
+          </Typography>
+          <Typography variant="h6">Price: {price}</Typography>
+        </CardContent>
+      <CardActions sx={{ justifyContent: "space-between", padding: 2 }}>
+        <Button variant="outlined" color="error" onClick={handleRedirect} size="small">
           View Price History
+        </Button>
+        <Button variant="outlined" color="error" href={siteURL} size="small">
+          Visit Costco
         </Button>
       </CardActions>
     </Card>

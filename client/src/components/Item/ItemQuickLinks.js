@@ -12,15 +12,10 @@ const ItemQuickLinks = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const dealProductsResponse = await fetchDealItems(
-          false,
-          dealsPerPage
-        );
+        const dealProductsResponse = await fetchDealItems(false, dealsPerPage);
 
-        console.log(dealProductsResponse);
-        
         if (dealProductsResponse && dealProductsResponse.data) {
-            setDealProducts(dealProductsResponse.data);
+          setDealProducts(dealProductsResponse.data);
         }
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -53,68 +48,74 @@ const ItemQuickLinks = () => {
     e.preventDefault();
 
     if (e.target.id === "increaseDeals") {
-        setDealsPerPage((prevDealsPerPage) => prevDealsPerPage + 3);
+      setDealsPerPage((prevDealsPerPage) => prevDealsPerPage + 3);
     } else if (e.target.id === "increaseInStore") {
-        setInStoresPerPage((prevInStoresPerPage) => prevInStoresPerPage + 3);
+      setInStoresPerPage((prevInStoresPerPage) => prevInStoresPerPage + 3);
     }
   };
 
   return (
-    <Container>
-      <Box mt={3}>
-        <Typography variant="h4" gutterBottom>
-          Best Deals
-        </Typography>
-        <Grid container justifyContent="center" spacing={2}>
-          {dealProducts.length > 0 ? (
-            dealProducts.map((item) => (
-              <Grid key={item.id} item xs={12} sm={6} md={4}>
-                <ItemCard item={item} />
-              </Grid>
-            ))
-          ) : (
-            <Typography variant="body2">No deal products available.</Typography>
-          )}
-        </Grid>
-      </Box>
-      <Box mt={3}>
-        <Button
-          id="increaseDeals"
-          variant="contained"
-          onClick={handleIncreaseItemsPerPage}
-        >
-          Show More Deals
-        </Button>
-      </Box>
+    <Grid container justifyContent="center">
+      <Grid item xs={10}>
+        <Box mt={3}>
+          <Typography variant="h4" gutterBottom>
+            Best Deals
+          </Typography>
+          <Grid container justifyContent="center" spacing={2}>
+            {dealProducts.length > 0 ? (
+              dealProducts.map((item) => (
+                <Grid key={item.id} item xs={12} sm={6} md={4}>
+                  <ItemCard item={item} />
+                </Grid>
+              ))
+            ) : (
+              <Typography variant="body2">
+                No deal products available.
+              </Typography>
+            )}
+          </Grid>
+        </Box>
+        <Box mt={3}>
+          <Button
+            id="increaseDeals"
+            variant="text"
+            color="error"
+            onClick={handleIncreaseItemsPerPage}
+          >
+            Show More
+          </Button>
+        </Box>
 
-      <Box mt={3}>
-        <Typography variant="h4" gutterBottom>
-          In-Store only Deals
-        </Typography>
-        <Grid container justifyContent="center" spacing={2}>
-          {inStoreProducts.length > 0 ? (
-            inStoreProducts.map((item) => (
-              <Grid key={item.id} item xs={12} sm={6} md={4}>
-                <ItemCard item={item} />
-              </Grid>
-            ))
-          ) : (
-            <Typography variant="body2">
-              No in-store deal products available.
-            </Typography>
-          )}
-        </Grid>
-      </Box>
-      <Box mt={3}>
-        <Button
-          id="increaseInStore"
-          variant="contained"
-          onClick={handleIncreaseItemsPerPage}
-        >
-          Show More InStore Only Deals
-        </Button>
-      </Box>
-    </Container>
+        <Box mt={3}>
+          <Typography variant="h4" gutterBottom>
+            In-Store only Deals
+          </Typography>
+          <Grid container justifyContent="center" spacing={2}>
+            {inStoreProducts.length > 0 ? (
+              inStoreProducts.map((item) => (
+                <Grid key={item.id} item xs={12} sm={6} md={4}>
+                  <ItemCard item={item} />
+                </Grid>
+              ))
+            ) : (
+              <Typography variant="body2">
+                No in-store deal products available.
+              </Typography>
+            )}
+          </Grid>
+        </Box>
+        <Box mt={3}>
+          <Button
+            id="increaseInStore"
+            variant="text"
+            color="error"
+            onClick={handleIncreaseItemsPerPage}
+          >
+            Show More
+          </Button>
+        </Box>
+      </Grid>
+    </Grid>
   );
 };
 

@@ -27,7 +27,6 @@ const ItemPage = () => {
     const getProduct = async () => {
       if (!itemObject) {
         await fetchItem(productID, null).then((res) => {
-          console.log(res);
           if (res.status === 200) {
             setProduct(res.data);
           }

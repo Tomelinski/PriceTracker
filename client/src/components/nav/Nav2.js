@@ -18,8 +18,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { AuthContext } from "../../context/authContext";
 import { NavLink } from "react-router-dom";
-import { AUTH_ROUTE, ROUTE } from "../../constants/Constants";
+import { APP_NAME, AUTH_ROUTE, ROUTE } from "../../constants/Constants";
 import { ItemSearch } from "../search";
+import Logo from '../../assets/images/Logo.png';
 
 const pages = ["Home"];
 const settings = ["Profile", "Settings", "Logout"];
@@ -65,7 +66,15 @@ const Nav2 = () => {
     <AppBar position="static" >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+        <Box
+          component="img"
+          sx={{
+            height: 70,
+            width: 70,
+          }}
+          alt="PriceWatcher Logo"
+          src={Logo}
+        />
           <Typography
             variant="h6"
             noWrap
@@ -81,7 +90,7 @@ const Nav2 = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            {APP_NAME}
           </Typography>
           <Box>
             <ItemSearch />
@@ -139,7 +148,7 @@ const Nav2 = () => {
               textDecoration: "none",
             }}
           >
-            LOGOs
+            {APP_NAME}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (

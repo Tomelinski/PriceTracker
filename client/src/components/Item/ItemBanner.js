@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Paper, Typography, Grid, Link, Box, Button } from "@mui/material";
+import { Paper, Typography, Grid, Link, Box, Button, CardMedia } from "@mui/material";
 import ItemSpecList from "./ItemSpecList";
 
 const ItemBanner = ({product}) => {
@@ -27,10 +27,8 @@ const ItemBanner = ({product}) => {
         }}
       />
       <Grid container justifyContent="center">
-        <Box sx={{ width: 350 }}>
-          {<img src={imageURL} alt={name} />}
-        </Box>
-        <Grid item md={6}>
+        <CardMedia component="img" sx={{ objectFit: "contain", width: 350, margin: '.5em .1em' }} image={imageURL} title={name} />
+        <Grid item md={6} m='2.5rem 0'>
           <Box p={3}>
             <Box>
               <Typography
@@ -57,13 +55,13 @@ const ItemBanner = ({product}) => {
             <Box mb={3}>
               <ItemSpecList specs={specifications} />
             </Box>
-            <Box>
-              <Button variant="contained" size="large" {...(inStoreOnly ? {disabled: true} : {})}>
+            <Box position="absolute" bottom={'3em'}>
+              <Button variant="outlined" color="error" size="large" {...(inStoreOnly ? {disabled: true} : {})}>
                 <Link
                   variant="body2"
                   underline="none"
                   rel="noreferrer"
-                  color="yellow"
+                  color="red"
                   href={siteURL}
                 >
                   {(inStoreOnly ? `${retailer} In store only deal` : `View on ${retailer}`)}

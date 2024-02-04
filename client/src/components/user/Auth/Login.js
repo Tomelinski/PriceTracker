@@ -16,7 +16,6 @@ const Login = () => {
       console.log("An Error has occurred while authenticating");
     });
 
-    console.log(response);
     if (response) {
       auth.login(response, response.id);
     }
@@ -53,7 +52,7 @@ const Login = () => {
 
   return (
     <Grid container justifyContent="center">
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={10}>
         <Box mt={3}>
           <Typography variant="h4" align="center">
             Login

@@ -1,3 +1,5 @@
+const APP_NAME = process.env.REACT_APP_NAME;
+
 const AUTH_ROUTE = {
     LOGIN: '/login',
     LOGIN_GOOGLE: '/auth/google',
@@ -45,4 +47,4 @@ const QUICK_TIPS = [
   }
 ];
 
-export { AUTH_ROUTE, ROUTE, SETTINGS_ROUTE, QUICK_TIPS, DEAL_LIMIT };
+export { APP_NAME, AUTH_ROUTE, ROUTE, SETTINGS_ROUTE, QUICK_TIPS, DEAL_LIMIT };

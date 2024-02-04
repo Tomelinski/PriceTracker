@@ -28,7 +28,6 @@ export const fetchItem = async (itemId, itemURL) => {
       throw new Error('Either itemId or itemURL must be provided.');
     }
 
-    console.log(url, params);
     return await api.get(url, { params: params });
   } catch (error) {
     console.error('Error fetching Item Data:', error);

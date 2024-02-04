@@ -5,10 +5,11 @@ import { AuthContext } from "./context/authContext";
 import { Login, LoginSuccess, Register } from './components/user/Auth';
 import { logout as authLogout } from "./api/Auth";
 import { Nav2 } from "./components/nav";
-import { Home } from "./components/common/Home";
+import { Home } from "./components/Home";
 import { ItemPage } from "./components/Item";
 import { AUTH_ROUTE, ROUTE } from './constants/Constants';
 import { Grid } from '@mui/material';
+import { Footer } from './components/footer';
 
 let logoutTimer;
 
@@ -111,10 +112,11 @@ const App = () => {
       >
           <Nav2 />
           <Grid container justifyContent="center">
-            <Grid item xs={12} md={10}>
+            <Grid item xs={10}>
               {routes}  
             </Grid>
           </Grid>
+          <Footer />
       </AuthContext.Provider>
     </div>
   );

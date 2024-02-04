@@ -27,7 +27,6 @@ const Register = () => {
   const onSubmit = async (data) => {
     try {
       const response = await registerUser(data);
-      console.log(response.status, response.data);
       if (response.status === 200) {
         navigate(AUTH_ROUTE.LOGIN); 
       }

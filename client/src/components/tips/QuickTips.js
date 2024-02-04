@@ -31,9 +31,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const QuickTips = () => {
-    // const tips = Object.entries(QUICK_TIPS);
-    // const [title, description] = QUICK_TIPS;
-    // console.log(title, description);
 
   return (
     <TableContainer component={Paper} >

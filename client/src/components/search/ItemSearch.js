@@ -31,6 +31,7 @@ const ItemSearch = () => {
           <SearchIcon />
         </div>
         <InputBase
+          sx={{width: '35rem'}}
           className="styled-input-base"
           placeholder="Find Costco Product..."
           onChange={(e) => setProductURL(e.target.value)}

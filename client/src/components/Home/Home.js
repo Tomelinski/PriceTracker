@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
-import { ItemSearch } from "../../search";
-import QuickTips from "../../tips/QuickTips";
-import ItemQuickLinks from "../../Item/ItemQuickLinks";
+import { ItemSearch } from "../search";
+import QuickTips from "../tips/QuickTips";
+import ItemQuickLinks from "../Item/ItemQuickLinks";
 
 const Home = () => {
   return (
@@ -19,7 +19,7 @@ const Home = () => {
         <ItemQuickLinks />
       </Box>
       <Grid container justifyContent="center">
-        <Grid item xs={6}>
+        <Grid item xs={8}>
           <Box mt={3} mb={3}>
             <Typography variant="h4" align="center">
               Quick Tips

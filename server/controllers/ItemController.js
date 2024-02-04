@@ -4,7 +4,6 @@ const { development } = require("../database/config/config");
 const paginate = require("../helpers/route/pagination");
 
 const getItem = async (req, res) => {
-  console.log("request got here.");
   let result;
   const itemId = req.params.itemId ?? null;
   const itemURL = req.query.itemURL ?? null;
