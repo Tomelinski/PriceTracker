@@ -28,6 +28,26 @@ const ITEM_ATTRIBUTES = {
         defaultValue: null,
         allowNull: true,
     },
+    prevPrice: {
+        type: DataTypes.DECIMAL(12,2),
+        defaultValue: null,
+        allowNull: true,
+    },
+    dealPercent: {
+        type: DataTypes.DECIMAL(5,2),
+        defaultValue: null,
+        allowNull: true,
+    },
+    dealAmount: {
+        type: DataTypes.DECIMAL(12,2),
+        defaultValue: null,
+        allowNull: true,
+    },
+    dealScore: {
+        type: DataTypes.DECIMAL(4,2),
+        defaultValue: null,
+        allowNull: true,
+    },
     priceHistory: {
         type: DataTypes.JSON,
         defaultValue: [],
@@ -35,10 +55,16 @@ const ITEM_ATTRIBUTES = {
     siteURL: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+            isUrl: true,
+        },
     },
     imageURL: {
         type: DataTypes.STRING,
         allowNull: true,
+        validate: {
+            isUrl: true,
+        },
     },
     createdAt: {
       allowNull: false,
