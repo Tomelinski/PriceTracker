@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Container, Grid, Typography, Button } from "@mui/material";
+import { Box, Grid, Typography, Button } from "@mui/material";
 import { fetchDealItems } from "../../api/Axios";
 import ItemCard from "./ItemCard";
 
@@ -63,9 +63,9 @@ const ItemQuickLinks = () => {
           </Typography>
           <Grid container justifyContent="center" spacing={2}>
             {dealProducts.length > 0 ? (
-              dealProducts.map((item) => (
-                <Grid key={item.id} item xs={12} sm={6} md={4}>
-                  <ItemCard item={item} />
+              dealProducts.map((product) => (
+                <Grid key={product.id} item xs={12} sm={6} md={4}>
+                  <ItemCard product={product} />
                 </Grid>
               ))
             ) : (
@@ -92,9 +92,9 @@ const ItemQuickLinks = () => {
           </Typography>
           <Grid container justifyContent="center" spacing={2}>
             {inStoreProducts.length > 0 ? (
-              inStoreProducts.map((item) => (
-                <Grid key={item.id} item xs={12} sm={6} md={4}>
-                  <ItemCard item={item} />
+              inStoreProducts.map((product) => (
+                <Grid key={product.id} item xs={12} sm={6} md={4}>
+                  <ItemCard product={product} />
                 </Grid>
               ))
             ) : (

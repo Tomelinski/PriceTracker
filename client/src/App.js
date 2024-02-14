@@ -4,7 +4,7 @@ import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "./context/authContext";
 import { Login, LoginSuccess, Register } from './components/user/Auth';
 import { logout as authLogout } from "./api/Auth";
-import { Nav2 } from "./components/nav";
+import { Nav } from "./components/nav";
 import { Home } from "./components/Home";
 import { ItemPage } from "./components/Item";
 import { AUTH_ROUTE, ROUTE } from './constants/Constants';
@@ -110,7 +110,7 @@ const App = () => {
           logout: logout,
         }}
       >
-          <Nav2 />
+          <Nav />
           <Grid container justifyContent="center">
             <Grid item xs={10}>
               {routes}  

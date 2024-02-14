@@ -1,6 +1,8 @@
 *.DS_Store
-/flyers
+# /flyers
 /logs
+/error_logs
+/log_cache
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

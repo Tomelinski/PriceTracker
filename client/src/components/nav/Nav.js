@@ -1,65 +1,208 @@
-import React, { useContext } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem, Hidden, Box } from '@mui/material';
-import { NavLink } from "react-router-dom";
+import * as React from "react";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  Container,
+  Button,
+  Tooltip,
+  MenuItem,
+} from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import AdbIcon from '@mui/icons-material/Adb';
+import MenuIcon from '@mui/icons-material/Menu';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { AuthContext } from "../../context/authContext";
+import { NavLink } from "react-router-dom";
+import { APP_NAME, AUTH_ROUTE, ROUTE } from "../../constants/Constants";
+import { ItemSearch } from "../search";
+import Logo from '../../assets/images/Logo.png';
 
-const Nav = ({ token }) => {
-  const auth = useContext(AuthContext);
+const pages = ["Home"];
+const settings = ["Profile", "Settings", "Logout"];
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#ffffff',
+    },
+  },
+});
 
-  const handleMenu = (event) => {
-    setAnchorEl(event.currentTarget);
+const Nav = () => {
+  const auth = React.useContext(AuthContext);
+  const handleLogout = auth.logout;
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = async (setting) => {
+    switch (setting) {
+      case "Logout":
+        await handleLogout();
+        break;
+      default:
+        break;
+    }
+    setAnchorElUser(null);
   };
 
   return (
-    <AppBar position="static">
-      <Toolbar  sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Box display="flex" alignItems="center" flexGrow={1}>
-          {/* Burger menu on small screens */}
-          <Hidden mdUp>
+    <ThemeProvider theme={theme}>
+    <AppBar position="static" >
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href={ROUTE.HOME}
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
+              alignItems: "center"
+            }}
+          >
+            <img
+              alt="PriceWatcher Logo"
+              src={Logo}
+              style={{
+                height: 70,
+                width: 70,
+                objectFit: 'cover',
+              }}
+            />
+            {/* {APP_NAME} */}
+          </Typography>
+          <Box>
+            <ItemSearch />
+          </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
-              edge="start"
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
               color="inherit"
-              aria-label="menu"
-              onClick={handleMenu}
             >
               <MenuIcon />
             </IconButton>
-            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-              <MenuItem onClick={handleClose}>Fake Item</MenuItem>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "block", md: "none" },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page}</Typography>
+                </MenuItem>
+              ))}
             </Menu>
-          </Hidden>
-  
-          <Hidden smDown>
-            <Typography variant="h6" component="div" sx={{ display: 'flex', justifyContent: 'space-between', flexGrow: 1 }}>
-              <NavLink to="#fakeItem" style={{ textDecoration: "none", color: "white" }}>
-                Stuff Made Here
-              </NavLink>
-            </Typography>
-          </Hidden>
-        </Box>
-  
-        {auth.isLoggedIn ? (
-          <>
-            <MenuItem color="inherit" onClick={auth.logout}>
-              Logout
-            </MenuItem>
-          </>
+          </Box>
+          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href={ROUTE.HOME}
+            sx={{
+              mr: 2,
+              display: { xs: "flex", md: "none" },
+              flexGrow: 1,
+              fontFamily: "monospace",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          >
+            {APP_NAME}
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+
+          {auth.isLoggedIn ? (
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+                <AccountCircleIcon sx={{ fontSize: 45 }}/>
+              </IconButton>
+            </Tooltip>
+            <Menu
+              sx={{ mt: "45px" }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+                >
+              {settings.map((setting) => (
+                <MenuItem key={setting} onClick={()=>handleCloseUserMenu(setting)}>
+                  <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
         ) : (
-          <NavLink to="/login" style={{ textDecoration: "none" }}>
-            <MenuItem color="inherit">Login</MenuItem>
+          <NavLink to={AUTH_ROUTE.LOGIN}>
+            <Button variant="contained" color="error">Login</Button>
           </NavLink>
         )}
-      </Toolbar>
+        </Toolbar>
+      </Container>
     </AppBar>
+    </ThemeProvider>
   );
-};
+}
 
 export default Nav;

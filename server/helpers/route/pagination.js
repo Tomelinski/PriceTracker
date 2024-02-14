@@ -1,10 +1,11 @@
-const paginate = async (model, conditions = {}, page = 1, limit = 3) => {
+const paginate = async (model, conditions = {}, page = 1, limit = 3, options = {}) => {
     try {
       const offset = (page - 1) * +limit;
       const { count, rows } = await model.findAndCountAll({
         where: { ...conditions },
         limit: +limit,
         offset,
+        ...options,
       });
   
       return {

@@ -1,9 +1,25 @@
 import * as React from "react";
-import { Paper, Typography, Grid, Link, Box, Button, CardMedia } from "@mui/material";
+import {
+  Paper,
+  Typography,
+  Grid,
+  Link,
+  Box,
+  Button,
+  CardMedia,
+} from "@mui/material";
 import ItemSpecList from "./ItemSpecList";
+import ItemPrice from "./itemPrice";
 
-const ItemBanner = ({product}) => {
-  const { name, imageURL, price, inStoreOnly, specifications, siteURL, retailer } = product;
+const ItemBanner = ({ product }) => {
+  const {
+    name,
+    imageURL,
+    inStoreOnly,
+    specifications,
+    siteURL,
+    retailer,
+  } = product;
 
   return (
     <Paper
@@ -27,8 +43,13 @@ const ItemBanner = ({product}) => {
         }}
       />
       <Grid container justifyContent="center">
-        <CardMedia component="img" sx={{ objectFit: "contain", width: 350, margin: '.5em .1em' }} image={imageURL} title={name} />
-        <Grid item md={6} m='2.5rem 0'>
+        <CardMedia
+          component="img"
+          sx={{ objectFit: "contain", width: 350, margin: ".5em .1em" }}
+          image={imageURL}
+          title={name}
+        />
+        <Grid item md={6} m="2.5rem 0">
           <Box p={3}>
             <Box>
               <Typography
@@ -41,22 +62,17 @@ const ItemBanner = ({product}) => {
                 {name}
               </Typography>
             </Box>
-            <Box>
-              <Typography
-                component="h1"
-                variant="h5"
-                align="left"
-                color="inherit"
-                gutterBottom
-              >
-                Price: {price}
-              </Typography>
-            </Box>
+            <ItemPrice product={product}/>
             <Box mb={3}>
               <ItemSpecList specs={specifications} />
             </Box>
-            <Box position="absolute" bottom={'3em'}>
-              <Button variant="outlined" color="error" size="large" {...(inStoreOnly ? {disabled: true} : {})}>
+            <Box position="absolute" bottom={"3em"}>
+              <Button
+                variant="outlined"
+                color="error"
+                size="large"
+                {...(inStoreOnly ? { disabled: true } : {})}
+              >
                 <Link
                   variant="body2"
                   underline="none"
@@ -64,7 +80,9 @@ const ItemBanner = ({product}) => {
                   color="red"
                   href={siteURL}
                 >
-                  {(inStoreOnly ? `${retailer} In store only deal` : `View on ${retailer}`)}
+                  {inStoreOnly
+                    ? `${retailer} In store only deal`
+                    : `View on ${retailer}`}
                 </Link>
               </Button>
             </Box>

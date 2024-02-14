@@ -99,11 +99,34 @@ const getFlyer = async (req, res) => {
               return;
             }
 
-            const { retailer, title, image, price, specifications } =
+            const { retailer, title, image, price, originalPrice, flyerDates, specifications } =
               itemObj;
 
-            const currentDate = new Date().toISOString().split("T")[0];
-            const priceHistory = [{ price, date: currentDate }];
+            const startDate = new Date(flyerDates.startDate);
+            const currentDate = new Date();
+            const priceHistory = [];
+
+            const dayBeforeStartDate = new Date(startDate);
+            dayBeforeStartDate.setDate(dayBeforeStartDate.getDate() - 1);
+            priceHistory.push({ price: originalPrice, date: dayBeforeStartDate.toISOString().split("T")[0] });
+
+            for (let date = startDate; date <= currentDate; date.setDate(date.getDate() + 1)) {
+              const formattedDate = date.toISOString().split("T")[0];
+            
+              priceHistory.push({ price, date: formattedDate });
+            }
+
+            const dealAmount = originalPrice - price;
+            const dealPercent = parseFloat(((1 - (price / originalPrice)) * 100).toFixed(2));
+            
+            const dealAmountWeight = 0.9;
+            const dealPercentWeight = 0.7;
+            const dealScoreAssists = 1.2;
+
+            const dealAmountScore = Math.max(Math.min(dealAmount / originalPrice, 1), 0) * 10;
+            const dealPercentScore = Math.max(Math.min(dealPercent / 100, 1), 0) * 10;
+
+            const dealScore = ((dealAmountScore * dealAmountWeight) + (dealPercentScore * dealPercentWeight)) * dealScoreAssists;
 
             const updatedItem = await item.update(
               {
@@ -111,7 +134,11 @@ const getFlyer = async (req, res) => {
                 retailer: retailer || null,
                 inStoreOnly: inStoreOnly,
                 specifications: specifications || {},
-                price: price || null,
+                price: price,
+                prevPrice: originalPrice,
+                dealAmount: dealAmount,
+                dealPercent: dealPercent,
+                dealScore: dealScore,
                 priceHistory: priceHistory,
                 imageURL: image || null,
               },
@@ -135,19 +162,22 @@ const getFlyer = async (req, res) => {
   res.json(true);
 };
 
-const getFlyerDeals = async (req, res) => {
+const getDeals = async (req, res) => {
   try {
     const inStoreOnly = req.query.inStoreOnly === 'true' || false;
     const page = req.query.page || 1;
     const limit = req.query.limit || 3;
 
     const conditions = inStoreOnly && { inStoreOnly };
+    const order = {
+      order: [['dealScore', 'DESC']], 
+    };
 
-    const { totalCount, data } = await paginate(Item, conditions, page, limit);
+    const { totalCount, data } = await paginate(Item, conditions, page, limit, order);
 
     res.json({ totalCount, data });
   } catch (error) {
-    console.error('Error fetching flyer deals:', error);
+    console.error('Error fetching deals:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
@@ -155,5 +185,5 @@ const getFlyerDeals = async (req, res) => {
 module.exports = {
   getItem,
   getFlyer,
-  getFlyerDeals,
+  getDeals,
 };
