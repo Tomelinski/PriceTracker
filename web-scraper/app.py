@@ -28,6 +28,7 @@ def costco():
 @app.route('/flyer')
 def flyer():
     url_param = request.args.get('flyerURL')
+    print(f'Flyer deals: {url_param}')
 
     if not url_param:
         return jsonify({'error': 'flyerURL parameter is required'})

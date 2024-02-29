@@ -6,7 +6,7 @@ const SERVER_ROUTE = {
     LOGOUT: '/auth/logout',
     USER: '/auth/user',
     ITEM: '/api/item',
-    DEALS: '/api/Deals',
+    DEALS: '/api/deals',
 }
 
 export { SERVER_ROUTE };

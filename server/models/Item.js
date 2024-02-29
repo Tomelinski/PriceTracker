@@ -54,8 +54,9 @@ const ITEM_ATTRIBUTES = {
     },
     siteURL: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
+            notEmpty: false,
             isUrl: true,
         },
     },
@@ -63,6 +64,7 @@ const ITEM_ATTRIBUTES = {
         type: DataTypes.STRING,
         allowNull: true,
         validate: {
+            notEmpty: false,
             isUrl: true,
         },
     },

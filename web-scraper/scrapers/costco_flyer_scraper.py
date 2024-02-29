@@ -17,32 +17,38 @@ class CostcoFlyerScraper(BaseScraper):
             url_tag = soup.find("a", href=True)
 
             if url_tag:
-                return url_tag.get("href")
+                return str(url_tag.get("href"))
             else:
-                return "url not found"
+                print("url not found")
+                return None
         except:
-            return "url not found"
+            print("url not found")
+            return None
         
     def getProductName(self, soup):
         try:
             title_tag = soup.find("span", class_="spanBlock sl1")
 
             if title_tag:
-                return title_tag.text.strip()
+                return str(title_tag.text.strip())
             else:
-                return "Title not found"
+                print("Title not found")
+                return None
         except:
-            return "Title not found"
+            print("Title not found")
+            return None
 
     def getImage(self, soup):
         try:
             img_tag = soup.find("img", src=True)
             if img_tag:
-                return img_tag.get("src")
+                return str(img_tag.get("src"))
             else:
-                return "Image not found"
+                print("Image not found")
+                return None
         except:
-            return "Image not found"
+            print("Image not found")
+            return None
     
     def getProductPrice(self, soup):
         try:
@@ -103,6 +109,7 @@ class CostcoFlyerScraper(BaseScraper):
             today = date.today()
 
             if (log_file_date >= today):
+                print(f'Log Date: {log_file_date} :: today: {today}')
                 return log_file_name
             
         return ''
@@ -126,8 +133,8 @@ class CostcoFlyerScraper(BaseScraper):
         log_file_path = f'./flyers/{self.get_log_file_source()}'
 
         try:
-            print(f'File: {log_file_path} & file exists {os.path.exists(log_file_path)}')
-            if os.path.exists(log_file_path):
+            print(f'File: {log_file_path} & file exists {os.path.isfile(log_file_path)}')
+            if os.path.isfile(log_file_path):
                 with open(log_file_path, 'r') as log_file:
                     source = log_file.read()
             else:
@@ -138,7 +145,7 @@ class CostcoFlyerScraper(BaseScraper):
             item_array = soup.find_all("li", class_="couponbox")
 
             if item_array:
-                if not os.path.exists(log_file_path):
+                if not os.path.isfile(log_file_path):
                     self.save_new_log(soup, item_array, retailer)
 
                 for item in item_array:
@@ -152,11 +159,11 @@ class CostcoFlyerScraper(BaseScraper):
                     current_price = price_info.get("current_price")
 
                     costcoData.append({
-                        "url": str(url),
+                        "url": url,
                         "retailer": str(retailer),
                         "flyerDates": self.getFlyerDates(item),
-                        "title": str(self.getProductName(item)),
-                        "image": str(self.getImage(item)),
+                        "title": self.getProductName(item),
+                        "image": self.getImage(item),
                         "originalPrice": original_price,
                         "price": current_price,
                         "specifications": None,

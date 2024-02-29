@@ -1,0 +1,1001 @@
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-04-7">Apr. 7, 2024</time> <span style="font-weight:bolder; color:#D92631">6 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="27">
+<span class="spanBlock action">SPEND $100 GET $25* <br/></span>
+<span class="spanBlock price"> </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1"></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2">Spend $100 on P&G products, get a $25 Digital Costco Shop Card. Spend $200 on P&G products, get a $50 Digital Costco Shop Card. Product selection my vary by warehouse.</span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span></span>
+<button aria-describedby="27" aria-haspopup="true" class="btn btn-primary detailsBtn" data-target="#mod27" data-toggle="modal" type="button">* Details and conditions</button>
+</div>
+<!--PRICING TABLE-->
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/procter-and-gamble-brand-showcase.html" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/png-enn.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/procter-and-gamble-brand-showcase.html"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="29">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $200 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Samsung 55-in. Q85C QLED TV</span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>5408555</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$1,394.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$200.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$1,194.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=4000161148" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/samsung-55.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=4000161148"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="32">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $<span style='\"letter-spacing:-.1em;\"'>1</span>00 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Sealy Mirrorform 12-in. gel memory foam queen mattress</span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>1781385</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$499.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$100.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$399.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/sealy-mirrorform-30.5-cm-12-in.-gel-memory-foam-queen-mattress.product.4000236284.html" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/sealy.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/sealy-mirrorform-30.5-cm-12-in.-gel-memory-foam-queen-mattress.product.4000236284.html"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="33">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $<span style='\"letter-spacing:-.1em;\"'>1</span>0 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Accent Home adjustable resin shelf</span>
+<span class="spanBlock sl2">91.4 cm × 45.7 cm (36 in × 18 in)<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>1616540</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$39.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$10.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$29.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/storagen.jpg"/>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer"></div>
+<span class="btn btn-lg btn-whsOnly">Warehouse only offer</span>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="34">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $75 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Buy one complete pair of eyeglasses with prescription lenses + new frame and RECEIVE $75 off the 2nd pair*</span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2">*Second pair must be purchased in the same transaction for the same patient. Valid prescription required.</span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span></span>
+<button aria-describedby="34" aria-haspopup="true" class="btn btn-primary detailsBtn" data-target="#mod34" data-toggle="modal" type="button">* Details and conditions</button>
+</div>
+<!--PRICING TABLE-->
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/glasses.jpg"/>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer"></div>
+<span class="btn btn-lg btn-whsOnly">Warehouse only offer</span>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="37">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $<span style='\"letter-spacing:-.1em;\"'>1</span>0 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Rowenta Access handheld steam iron</span>
+<span class="spanBlock sl2">Model  DW2361U1<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>1649439</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$49.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$10.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$39.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/rowenta-access-steam-iron.product.4000043396.html" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/iron.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/rowenta-access-steam-iron.product.4000043396.html"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="38">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $5 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Baldosa vestibule mat</span>
+<span class="spanBlock sl2">117 cm × 182 cm (46 in × 72 in)<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>3391400</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$24.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$5.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$19.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/venture.jpg"/>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer"></div>
+<span class="btn btn-lg btn-whsOnly">Warehouse only offer</span>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="39">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $40 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Cosco 4-in-1 folding toe plate series hand truck</span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>2323038</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$139.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$40.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$99.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/cosco-4-in-1-folding-toe-plate-series-hand-truck.product.4000163674.html" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/htruck.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/cosco-4-in-1-folding-toe-plate-series-hand-truck.product.4000163674.html"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="40">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $5 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Bench men's short sleeve <br/>t-shirt</span>
+<span class="spanBlock sl2">sizes S to XXL<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>1680035/6/7/8/9</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$14.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$5.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$9.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/bench-mens-short-sleeve-t-shirt.product.4000243436.html" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/bench-blue-r1.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/bench-mens-short-sleeve-t-shirt.product.4000243436.html"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="41">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $4 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Eddie Bauer ladies' <br/>sleeveless shirt</span>
+<span class="spanBlock sl2">sizes S to XXL<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>6412000/1/2/3/4</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$17.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$4.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$13.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=4000213478" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/eddie-b.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Also available on Costco.ca</div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=4000213478"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="42">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $5 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Eddie Bauer Bermuda ladies' <br/>short</span>
+<span class="spanBlock sl2">sizes 4 to 18<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>7551000/1/2/3/4/5/6/7</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$19.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$5.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$14.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=4000224564" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/bermuda.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Also available on Costco.ca</div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=4000224564"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="43">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $9 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Tim Hortons decaf or original K-cup pods</span>
+<span class="spanBlock sl2">pack of 80<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>1667667, 1669669</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$42.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$9.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$33.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=TimsMVEP7" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/tim-en.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=TimsMVEP7"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="44">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $6 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Kirkland Signature water filtration system pitcher with two filters or water filter cartridges</span>
+<span class="spanBlock sl2">2.3 L (10 cups) or pack of 10 cartridges<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>1304047, 1276702</span>
+</div>
+<!--PRICING TABLE-->
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=KSFilterMVEP7" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/ks-water.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=KSFilterMVEP7"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="45">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $7 </span>
+<span class="spanblock priceSfx">PER PACK*</span>
+<span class="spanBlock sl1">Kirkland Signature ginger beef stir fry</span>
+<span class="spanBlock sl2">*sold by kg<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>22465</span>
+</div>
+<!--PRICING TABLE-->
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/beef-r1.jpg"/>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer"></div>
+<span class="btn btn-lg btn-whsOnly">Warehouse only offer</span>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="46">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $5 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Maple Leaf oven-roasted sliced turkey breast</span>
+<span class="spanBlock sl2">3 × 300 g<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>1370704</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$21.49</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$5.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$16.49</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/naturalse.jpg"/>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer"></div>
+<span class="btn btn-lg btn-whsOnly">Warehouse only offer</span>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="47">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $3 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Hampton House chicken Parmesan chicken breast cutlets</span>
+<span class="spanBlock sl2">1.2 kg<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>282284</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$14.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$3.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$11.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/chicken-en.jpg"/>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer"></div>
+<span class="btn btn-lg btn-whsOnly">Warehouse only offer</span>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="48">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $3 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Olivieri Skillet gnocchi</span>
+<span class="spanBlock sl2">2 × 480 g<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>2268256</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$12.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$3.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$9.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/olivieri.jpg"/>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer"></div>
+<span class="btn btn-lg btn-whsOnly">Warehouse only offer</span>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="49">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $4 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Danone DanActive drinkable probiotic yogurt</span>
+<span class="spanBlock sl2">24 × 93 mL<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>552296</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$13.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$4.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$9.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/danactiven.jpg"/>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer"></div>
+<span class="btn btn-lg btn-whsOnly">Warehouse only offer</span>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="50">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $2.50 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Kellogg’s Vector cereal</span>
+<span class="spanBlock sl2">1.13 kg<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>128888</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$10.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$2.50</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$8.49</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/kellogg%E2%80%99s-vector,-1.13-kg.product.100417913.html" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/vector.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/kellogg%E2%80%99s-vector,-1.13-kg.product.100417913.html"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="51">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $5 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Nature's Way sambucus elderberry immune support</span>
+<span class="spanBlock sl2">120 gummies<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>2463594</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$24.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$5.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$19.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/sambucus-elderberry-cold-and-flu-care%2c-2-x-60-gummies.product.100671317.html" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/immune-nw.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/sambucus-elderberry-cold-and-flu-care%2c-2-x-60-gummies.product.100671317.html"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="52">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $9 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Gillette Sensor 2 Plus disposable razors</span>
+<span class="spanBlock sl2">pack of 52<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>934314</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$33.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$9.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$24.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/gillette-sensor-2-plus-disposable-razors,-52-pack.product.100417319.html" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/gillettes.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/gillette-sensor-2-plus-disposable-razors,-52-pack.product.100417319.html"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="53">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $<span style='\"letter-spacing:-.1em;\"'>1</span><span style='\"letter-spacing:-.1em;\"'>1</span> </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Huggies Plus Little Snugglers or Movers diapers</span>
+<span class="spanBlock sl2">sizes 1-6<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>955483, 955486, 2955498, 2955509, 2955510, 2955521</span>
+</div>
+<!--PRICING TABLE-->
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=HuggiesMVEP7" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/huggies-en.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=HuggiesMVEP7"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="54">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $6 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Kirkland Signature fragrance free baby wipes</span>
+<span class="spanBlock sl2">9 packs of 100<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>1493488</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$24.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$6.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$18.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/kirkland-signature-baby-wipes,-fragrance-free,-9-packs-of-100.product.4000066632.html" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/baby-wipes-ks.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/kirkland-signature-baby-wipes,-fragrance-free,-9-packs-of-100.product.4000066632.html"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="55">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $6.50 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Diaper Genie pail refills</span>
+<span class="spanBlock sl2">pack of 4<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>352922</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$25.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$6.50</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$19.49</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/diaper-genie-disposal-system-refills%2c-4-count.product.100240652.html" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/genie.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/diaper-genie-disposal-system-refills%2c-4-count.product.100240652.html"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="56">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $5 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Purex Premium or Cashmere Premium 2-ply bathroom tissue</span>
+<span class="spanBlock sl2">40 × 250 sheets<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>1424970, 4458722</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$24.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$5.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$19.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=PaperMVEP7" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/purex.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=PaperMVEP7"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="57">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $5.50 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Bounty Plus paper towel</span>
+<span class="spanBlock sl2">12 × 86 sheets<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>1707599</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$27.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$5.50</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$22.49</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/bounty-plus-paper-towels-12-rolls-x-86-sheets.product.4000115431.html" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/bounty.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/bounty-plus-paper-towels-12-rolls-x-86-sheets.product.4000115431.html"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="58">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $5 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Swiffer dusters, dry or wet refills</span>
+<span class="spanBlock sl2">28 dusters, 84 dry or 64 wet<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>1218587, 3380444, 3380446</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$23.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$5.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$18.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=SwifferMVEP7" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/swiffer.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=SwifferMVEP7"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="59">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $5.50 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Tide Coldwater Clean original liquid laundry detergent</span>
+<span class="spanBlock sl2">123 washloads<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>1458556</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$26.49</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$5.50</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$20.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/tide-coldwater-clean-liquid-laundry-detergent-123-loads.product.100681147.html" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/tide.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/tide-coldwater-clean-liquid-laundry-detergent-123-loads.product.100681147.html"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="60">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $4.50 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Purex After The Rain or Cold Water ultra concentrated laundry detergent</span>
+<span class="spanBlock sl2">250 washloads<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>1628214, 1628215</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$21.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$4.50</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$17.49</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=PurexMVEP7" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/purexb.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/CatalogSearch?dept=All&amp;keyword=PurexMVEP7"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>
+<li class="couponbox">
+<div class="CLpbulkcoup">
+<span class="CLP-validdates">Valid <time datetime="2024-02-26">Feb. 26</time> to <time datetime="2024-03-10">Mar. 10, 2024</time> <span style="font-weight:bolder; color:#D92631">2 WEEKS</span></span>
+<div class="CLP-product">
+<div class="productDetails" id="">
+<span class="spanBlock action">SAVE <br/></span>
+<span class="spanBlock price"> $4 </span>
+<span class="spanblock priceSfx"></span>
+<span class="spanBlock sl1">Downy April Fresh ultra concentrated fabric softener</span>
+<span class="spanBlock sl2">251 washloads<br/></span>
+<span class="spanBlock sl2"></span>
+<span class="spanBlock sl2"></span>
+<!-- <span class="spanBlock sl2"></span> -->
+<span class="spanBlock sku"><span class="sr-only">Item number</span>1656016</span>
+</div>
+<!--PRICING TABLE-->
+<table border="0" cellpadding="0" cellspacing="0" class="eco-priceTableGrid" role="presentation" style="margin-top:-5px;"><tbody><tr><td align="left" valign="top"><span class="eco-priceTableText">In-warehouse </span></td><td align="right"><span class="eco-priceTable">$18.99</span></td></tr><tr><td align="left"><span class="eco-priceTableText">Instant savings </span></td><td align="right"><span class="eco-priceTable">–$4.00</span></td></tr><tr class="eco-border_top"><td align="left" style="border-top:1px solid #cdd0d4"><span class="eco-priceTableText"><b>PRICE </b></span></td><td align="right" style="border-top: 1px solid #cdd0d4;"><span class="eco-priceTable"><b>$14.99</b></span></td></tr></tbody></table>
+<!--END PRICING TABLE-->
+</div>
+<div class="CLP-productimg">
+<span>
+<a aria-label="" href="https://www.costco.ca/downy-ultra-april-fresh-fabric-softener-5.03-l,-251-loads.product.100975817.html" style="text-decoration:none; height:100%; display:block">
+<img alt="" src="https://mobilecontent.costco.com/live/resource/img/FY24-P7-PPL-W12/downy.jpg"/>
+</a>
+</span>
+</div>
+</div>
+<div class="ctaWrapper">
+<div class="cta">
+<div class="onlineOffer">Available for delivery at a higher price. </div>
+<a aria-label="" class="btn btn-md btn-eOffer" href="https://www.costco.ca/downy-ultra-april-fresh-fabric-softener-5.03-l,-251-loads.product.100975817.html"><span aria-hidden="true" class="co-cart-rwd"></span> VIEW ONLINE OFFER</a>
+</div>
+</div>
+</li>

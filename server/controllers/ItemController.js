@@ -50,31 +50,32 @@ const getItem = async (req, res) => {
 
       return item;
     });
-  } catch (error) {
+  } catch (e) {
     // Rollback the transaction on error
-    console.error("Error during transaction:", error);
-    res.status(500).json({ error: error.message });
+    console.error("Error during transaction:", e);
+    res.status(500).json({ error: e.message });
     return;
   }
 
-  res.json(result);
+  return res.json(result);
 };
 
 const getFlyer = async (req, res) => {
   let result;
+  let counter = 0;
+  let errors = [];
   const flyerURL = req.query.flyerURL ?? null;
 
   try {
     const scraperURL = `${development.webScraper}/flyer`;
     const axiosResponse = await axios.get(scraperURL, {
       params: { flyerURL: flyerURL },
-    }).catch((error) => {
-      console.error("Error in Axios request:", error);
-      res.json(false);
+    }).catch((e) => {
+      console.error("Error in Axios request:", e);
+      errors.push(e);
     });
 
-    if (axiosResponse.status === 200 && axiosResponse.data) {
-      console.log(axiosResponse.data);
+    if (axiosResponse.status === 200 && axiosResponse.data && axiosResponse.data.length > 0) {
       result = await sequelize.transaction(async (t) => {
         for (const itemObj of axiosResponse.data) {
           let created = null;
@@ -82,7 +83,7 @@ const getFlyer = async (req, res) => {
           let inStoreOnly = false
 
           try {
-            if (itemObj.url === "url not found"){
+            if (itemObj.url === null){
               [item, created] = await Item.findOrCreate({
                 where: { name: itemObj.title, siteURL: itemObj.url },
                 transaction: t,
@@ -98,6 +99,7 @@ const getFlyer = async (req, res) => {
             if (!created) {
               return;
             }
+            counter++;
 
             const { retailer, title, image, price, originalPrice, flyerDates, specifications } =
               itemObj;
@@ -119,8 +121,8 @@ const getFlyer = async (req, res) => {
             const dealAmount = originalPrice - price;
             const dealPercent = parseFloat(((1 - (price / originalPrice)) * 100).toFixed(2));
             
-            const dealAmountWeight = 0.9;
-            const dealPercentWeight = 0.7;
+            const dealAmountWeight = 1.1;
+            const dealPercentWeight = 0.8;
             const dealScoreAssists = 1.2;
 
             const dealAmountScore = Math.max(Math.min(dealAmount / originalPrice, 1), 0) * 10;
@@ -144,22 +146,29 @@ const getFlyer = async (req, res) => {
               },
               { transaction: t }
             );
-          } catch (error) {
-            console.error("Error processing item:", error);
-            res.json(false);
+          } catch (e) {
+            console.error("Error processing item:", e);
+            errors.push(e)
           }
         }
       });
+    } else {
+      e = "No item retrieved"
+      console.log(e);
+      errors.push(e)
     }
-  } catch (error) {
+  } catch (e) {
     console.error(
       `Error: Could not reach ${development.webScraper}/flyer`,
-      error
+      e
     );
-    res.json(false);
+    errors.push(e)
   }
 
-  res.json(true);
+  if (errors.length > 0) {
+    return res.status(422).json({ success: false, message: `${counter} items created`, error: errors });
+  }
+  return res.status(201).json({ success: true, message: `${counter} items created` });
 };
 
 const getDeals = async (req, res) => {
@@ -175,7 +184,7 @@ const getDeals = async (req, res) => {
 
     const { totalCount, data } = await paginate(Item, conditions, page, limit, order);
 
-    res.json({ totalCount, data });
+    return res.json({ totalCount, data });
   } catch (error) {
     console.error('Error fetching deals:', error);
     res.status(500).json({ error: 'Internal Server Error' });
