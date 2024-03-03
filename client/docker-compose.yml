@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   client:
-    container_name: app-client
+    container_name: pricewatcher-client
     build:
       context: ./
       dockerfile: Dockerfile
@@ -21,8 +21,8 @@ services:
     ports:
       - 3000:3000
     networks:
-      - app-network
+      - pricewatcher-network
 
 networks:
-  app-network:
+  pricewatcher-network:
     driver: bridge

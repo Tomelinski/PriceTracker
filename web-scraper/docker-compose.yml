@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   web-scraper:
-    container_name: app-scraper
+    container_name: pricewatcher-scraper
     build:
       context: ./
       dockerfile: Dockerfile
@@ -13,8 +13,8 @@ services:
     ports:
       - 8080:8080
     networks:
-      - app-network
+      - pricewatcher-network
 
 networks:
-  app-network:
+  pricewatcher-network:
     driver: bridge

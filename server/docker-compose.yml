@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   server:
-    container_name: app-server
+    container_name: pricewatcher-server
     build:
       context: ./
       dockerfile: Dockerfile
@@ -29,7 +29,7 @@ services:
     #     - action: rebuild
     #       path: package.json
     networks:
-      - app-network
+      - pricewatcher-network
     depends_on:
       - mysql
 
@@ -48,12 +48,12 @@ services:
       - 33006:3306
     command: --default-authentication-plugin=mysql_native_password
     networks:
-      - app-network
+      - pricewatcher-network
 
 volumes:
   mysqlData:
     driver: local
 
 networks:
-  app-network:
+  pricewatcher-network:
     driver: bridge
