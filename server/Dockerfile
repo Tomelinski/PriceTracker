@@ -14,5 +14,4 @@ RUN npm install -g nodemon
 EXPOSE 8000
 
 # start app
-# CMD ["npm", "start"]
-CMD ["nodemon", "index.js"]
+CMD ["npm", "run", ${DOCKER_MODE}]

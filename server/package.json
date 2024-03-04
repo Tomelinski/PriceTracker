@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "prod": "node index.js",
+    "dev": "nodemon index.js",
     "fresh:create-db": "node database/SQL/createDatabase.js",
     "fresh:migrate": "npx sequelize-cli db:migrate",
     "fresh:seed": "npx sequelize-cli db:seed:all",
