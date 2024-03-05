@@ -34,26 +34,26 @@ const register = async (req, res, next) => {
         .json({ message: "A user already exists with this email." });
     }
 
-    User.create({
+    const newUser = await User.create({
       name: `${req.body.firstName} ${req.body.lastName}`,
       emailAddress: req.body.email,
       password: req.body.password,
-    }).then((newUser) =>
-      res
-        .status(200)
-        .json({ message: "User registered successfully", user: newUser })
-    );
+    });
 
+    res
+      .status(200)
+      .json({ message: "User registered successfully", user: newUser });
   } catch (err) {
     console.error(
-      "An issue occured while attempting to inserting a new user: ",
+      "An issue occurred while attempting to insert a new user: ",
       err
     );
     return res
       .status(400)
-      .send("Could not create user, Please try again later.");
+      .send("Could not create user. Please try again later.");
   }
 };
+
 
 const logout = (req, res, next) => {
   try {

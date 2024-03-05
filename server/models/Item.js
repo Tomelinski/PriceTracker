@@ -80,6 +80,10 @@ const ITEM_ATTRIBUTES = {
 
 module.exports = (sequelize) => {
     const Item = sequelize.define('Item', ITEM_ATTRIBUTES);
+
+    Item.associate = (models) => {
+        Item.hasMany(models.Favorite, { foreignKey: 'itemId' });
+    };
   
     return Item;
   };

@@ -55,6 +55,10 @@ module.exports = (sequelize) => {
     },
   });
 
+  User.associate = (models) => {
+    User.hasMany(models.Favorite, { foreignKey: 'userId' });
+  };
+
   return User;
 };
 
