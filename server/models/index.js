@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const userModel = require('./User');
 const itemModel = require('./Item');
+const priceNotificationModel = require('./PriceNotification');
 const FavoriteModel = require('./Favorite');
 
 const env = process.env.NODE_ENV || 'development';
@@ -10,6 +11,7 @@ const sequelize = new Sequelize(config);
 
 const User = userModel(sequelize);
 const Item = itemModel(sequelize);
+const priceNotification = priceNotificationModel(sequelize);
 const Favorite = FavoriteModel(sequelize);
 
 const db = {
@@ -17,6 +19,7 @@ const db = {
   Sequelize,
   User,
   Item,
+  priceNotification,
   Favorite,
 };
 

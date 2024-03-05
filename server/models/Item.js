@@ -82,6 +82,10 @@ module.exports = (sequelize) => {
     const Item = sequelize.define('Item', ITEM_ATTRIBUTES);
 
     Item.associate = (models) => {
+        Item.hasOne(models.PriceNotification, { foreignKey: 'itemId' });
+    };
+    
+    Item.associate = (models) => {
         Item.hasMany(models.Favorite, { foreignKey: 'itemId' });
     };
   

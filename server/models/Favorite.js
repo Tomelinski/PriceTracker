@@ -4,7 +4,6 @@ const FAVORITE_ATTRIBUTES = {
     userId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true,
         references: {
             model: 'Users',
             key: 'id',
@@ -14,7 +13,6 @@ const FAVORITE_ATTRIBUTES = {
     itemId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true,
         references: {
             model: 'Items',
             key: 'id',

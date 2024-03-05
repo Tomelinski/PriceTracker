@@ -56,6 +56,10 @@ module.exports = (sequelize) => {
   });
 
   User.associate = (models) => {
+    User.hasMany(models.PriceNotification, { foreignKey: 'userId' });
+  };
+
+  User.associate = (models) => {
     User.hasMany(models.Favorite, { foreignKey: 'userId' });
   };
 

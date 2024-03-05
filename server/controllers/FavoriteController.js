@@ -1,10 +1,10 @@
 const { Favorite } = require("../models");
 
-const getFavoritesByUserId = async (req, res) => {
+const getUserFavorites = async (req, res) => {
   try {
     const userFavorites = await Favorite.findAll({
       where: {
-        userId: req.query.userId,
+        userId: req.params.userId,
       },
     });
 
@@ -19,44 +19,52 @@ const getFavoritesByUserId = async (req, res) => {
 };
 
 const createFavorite = async (req, res) => {
-    try {
-      const itemId = req.query.itemId;
-      const userId = req.query.userId;
-      console.log(itemId, userId);
-  
+  try {
+    const itemId = req.query.itemId;
+    const userId = req.query.userId;
+
+    const existingFavorite = await Favorite.findOne({
+      where: { userId: userId, itemId: itemId },
+    });
+
+    if (existingFavorite) {
+      res.status(409).json({ success: false, message: "Item already favorited" });
+    } else {
       await Favorite.create({
         itemId: itemId,
         userId: userId,
       });
-  
-      res.status(200).json({ message: "Item favorited" });
-    } catch (e) {
-      console.log("error: ", e);
-      res.status(500).json({ error: "Error Creating item", e });
+      res.status(200).json({ success: true, message: "Item favorited" });
     }
-  };
+  } catch (e) {
+    console.log("error: ", e);
+    res.status(500).json({ error: e.message });
+  }
+};
 
-  const deleteFavorite = async (req, res) => {
-    try {
-      const itemId = req.query.itemId;
-      const userId = req.query.userId;
-  
-      const favoriteItem = await Favorite.findOne({ where: { userId: userId, itemId: itemId } });
-  
-      if (favoriteItem) {
-        await Favorite.destroy({ where: { userId: userId, itemId: itemId } });
-        res.status(200).json({ message: "Item Deleted" });
-      } else {
-        res.status(404).json({ message: "User or FavoriteItem not found" });
-      }
-    } catch (e) {
-      console.log("error: ", e);
-      res.status(500).json({ error: "Internal Server Error" });
+const deleteFavorite = async (req, res) => {
+  try {
+    const itemId = req.query.itemId;
+    const userId = req.query.userId;
+
+    const favoriteItem = await Favorite.findOne({
+      where: { userId: userId, itemId: itemId },
+    });
+
+    if (!favoriteItem) {
+      res.status(404).json({ success: false, message: "User or FavoriteItem not found" });
+    } else {
+      await favoriteItem.destroy();
+      res.status(200).json({ success: true, message: "Item Deleted" });
     }
-  };
+  } catch (e) {
+    console.log("error: ", e);
+    res.status(500).json({ error: e.message });
+  }
+};
 
 module.exports = {
+  getUserFavorites,
   createFavorite,
   deleteFavorite,
-  getFavoritesByUserId,
 };
