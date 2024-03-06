@@ -185,8 +185,8 @@ const getDeals = async (req, res) => {
     const { totalCount, data } = await paginate(Item, conditions, page, limit, order);
 
     return res.json({ totalCount, data });
-  } catch (error) {
-    console.error('Error fetching deals:', error);
+  } catch (e) {
+    console.error('Error fetching deals:', e);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };

@@ -4,8 +4,8 @@ const getUsers = async (req, res) => {
   try {
     const users = await User.findAll();
     res.json(users);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
   }
 };
 
@@ -18,8 +18,8 @@ const getUserById = async (req, res) => {
     } else {
       res.json(user);
     }
-  } catch (error) {
-    res.status(500).json({ error: error.message });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
   }
 };
 

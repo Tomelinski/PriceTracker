@@ -1,13 +1,56 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../../context/authContext";
 import { Box, Grid, Typography, Button } from "@mui/material";
-import { fetchDealItems } from "../../api/Axios";
+import { createFavorites, deleteFavorites, fetchDealItems, fetchFavorites } from "../../api/Axios";
 import ItemCard from "./ItemCard";
 
 const ItemQuickLinks = () => {
+  const auth = useContext(AuthContext);
+  const [favorites, setFavorites] = useState([]);
   const [dealProducts, setDealProducts] = useState([]);
   const [inStoreProducts, setInStoreProducts] = useState([]);
   const [dealsPerPage, setDealsPerPage] = useState(3);
   const [inStoresPerPage, setInStoresPerPage] = useState(3);
+
+  const manageFavorites = async (productId) => {
+    try {
+      if (auth?.isLoggedIn) {
+        const isFavorited = favorites.includes(productId);
+    
+        if (isFavorited) {
+          await deleteFavorites(auth.userData.id, productId);
+        } else {
+          await createFavorites(auth.userData.id, productId);
+        }
+    
+        setFavorites((prevFavorites) =>
+          isFavorited
+            ? prevFavorites.filter((id) => id !== productId)
+            : [...prevFavorites, productId]
+        );
+      }
+    } catch (error) {
+      console.error('Error updating favorites:', error);
+    }
+  };
+
+  useEffect(() => {
+    const getFavorites = async () => {
+      try {
+        if (auth?.isLoggedIn) {
+          const favoritesResponse = await fetchFavorites(auth.userData.id);
+
+          if (favoritesResponse) {
+            setFavorites(favoritesResponse);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching favorites:", error);
+      }
+    };
+
+    getFavorites();
+  }, [auth]);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -54,6 +97,10 @@ const ItemQuickLinks = () => {
     }
   };
 
+  const checkFavorite = (productId) => {
+    return favorites.length > 0 ? favorites.includes(productId) : false;
+  };
+
   return (
     <Grid container justifyContent="center">
       <Grid item xs={10}>
@@ -65,7 +112,12 @@ const ItemQuickLinks = () => {
             {dealProducts.length > 0 ? (
               dealProducts.map((product) => (
                 <Grid key={product.id} item xs={12} sm={6} md={4}>
-                  <ItemCard product={product} />
+                  <ItemCard
+                    product={product}
+                    auth={auth}
+                    favorited={checkFavorite(product.id)}
+                    manageFavorites={manageFavorites}
+                  />
                 </Grid>
               ))
             ) : (
@@ -94,7 +146,12 @@ const ItemQuickLinks = () => {
             {inStoreProducts.length > 0 ? (
               inStoreProducts.map((product) => (
                 <Grid key={product.id} item xs={12} sm={6} md={4}>
-                  <ItemCard product={product} />
+                  <ItemCard
+                    product={product}
+                    auth={auth}
+                    favorited={checkFavorite(product.id)}
+                    manageFavorites={manageFavorites}
+                  />
                 </Grid>
               ))
             ) : (

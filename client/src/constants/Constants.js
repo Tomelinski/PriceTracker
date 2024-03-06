@@ -20,6 +20,8 @@ const SETTINGS_ROUTE = {
 
 const DEAL_LIMIT = 3;
 
+const DOMAIN_NAME = process.env.REACT_APP_URL ?? "http://localhost:3000";
+
 const QUICK_TIPS = [
   {
     title: ".99",
@@ -47,4 +49,4 @@ const QUICK_TIPS = [
   }
 ];
 
-export { APP_NAME, AUTH_ROUTE, ROUTE, SETTINGS_ROUTE, QUICK_TIPS, DEAL_LIMIT };
+export { APP_NAME, AUTH_ROUTE, ROUTE, SETTINGS_ROUTE, QUICK_TIPS, DEAL_LIMIT, DOMAIN_NAME };
