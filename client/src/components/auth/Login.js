@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
-import { URL } from "../../../api/Config";
-import { loginUser, getGoogleUser } from "../../../api/Auth";
+import { URL } from "../../api/Config";
+import { loginUser, getGoogleUser } from "../../api/Auth";
 import { TextField, Button, Grid, Typography, Box } from "@mui/material";
 import Stack from "@mui/material/Stack";
-import { AuthContext } from "../../../context/authContext";
-import { AUTH_ROUTE } from "../../../constants/Constants";
+import { AuthContext } from "../../context/authContext";
+import { AUTH_ROUTE } from "../../constants/Constants";
 
 const Login = () => {
   const [email, setEmail] = useState();

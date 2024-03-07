@@ -2,11 +2,12 @@ import './App.css';
 import React, { useState, useCallback, useEffect } from "react";
 import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "./context/authContext";
-import { Login, LoginSuccess, Register } from './components/user/Auth';
+import { Login, LoginSuccess, Register } from './components/auth';
 import { logout as authLogout } from "./api/Auth";
 import { Nav } from "./components/nav";
-import { Home } from "./components/Home";
-import { ItemPage } from "./components/Item";
+import { Home } from "./components/home";
+import { ItemPage } from "./components/item";
+import { UserProfile } from "./components/user";
 import { AUTH_ROUTE, ROUTE } from './constants/Constants';
 import { Grid } from '@mui/material';
 import { Footer } from './components/footer';
@@ -90,7 +91,8 @@ const App = () => {
     routes = (
       <Routes>
         <Route path={ROUTE.HOME} element={<Home />} />
-        <Route path={`${ROUTE.ITEM}/:productID`} element={<ItemPage />} />
+        <Route path={`${ROUTE.ITEM}/:productId`} element={<ItemPage />} />
+        <Route path={`${ROUTE.PROFILE}/:userId`} element={<UserProfile />} />
         <Route path={AUTH_ROUTE.LOGIN} element={<Login />} />
         <Route path={AUTH_ROUTE.REGISTER} element={<Register />} />
         <Route path={AUTH_ROUTE.LOGIN_SUCCESS} element={<LoginSuccess />} />

@@ -9,7 +9,7 @@ import {
   CardMedia,
 } from "@mui/material";
 import ItemSpecList from "./ItemSpecList";
-import ItemPrice from "./ItemPrices";
+import ItemPrice from "./ItemPrice";
 
 const ItemBanner = ({ product }) => {
   const {

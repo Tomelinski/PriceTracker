@@ -11,10 +11,10 @@ import {
 } from "@mui/material";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { registerUser } from "../../../api/Auth";
-import RegisterSchema from '../../../schemas/RegisterSchema';
+import { registerUser } from "../../api/Auth";
+import RegisterSchema from '../../schemas/RegisterSchema';
 import {  useNavigate } from "react-router-dom";
-import { AUTH_ROUTE } from "../../../constants/Constants";
+import { AUTH_ROUTE } from "../../constants/Constants";
 
 const Register = () => {
   const navigate = useNavigate();

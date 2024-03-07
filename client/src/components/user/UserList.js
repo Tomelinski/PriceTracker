@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { fetchUsers } from '../../../api/Axios';
-
-import './UserList.css';
+import { fetchUsers } from '../../api/Axios';
 
 const UserList = () => {
     const [users, setUsers] = useState([]);

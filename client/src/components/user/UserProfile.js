@@ -2,10 +2,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../context/authContext";
 import { Box, Grid, Typography, Button } from "@mui/material";
 import { createFavorites, deleteFavorites, fetchDealItems, fetchFavorites } from "../../api/Axios";
+import ItemCard from "../item/ItemCard";
 import { DEAL_LIMIT } from "../../constants/Constants";
-import ItemCard from "./ItemCard";
 
-const ItemQuickLinks = () => {
+const UserProfile = () => {
   const auth = useContext(AuthContext);
   const [favorites, setFavorites] = useState([]);
   const [dealProducts, setDealProducts] = useState([]);
@@ -58,7 +58,7 @@ const ItemQuickLinks = () => {
       try {
         const dealProductsResponse = await fetchDealItems(false, dealsPerPage);
 
-        if (dealProductsResponse?.data) {
+        if (dealProductsResponse && dealProductsResponse.data) {
           setDealProducts(dealProductsResponse.data);
         }
       } catch (error) {
@@ -77,7 +77,7 @@ const ItemQuickLinks = () => {
           inStoresPerPage
         );
 
-        if (inStoreProductsResponse?.data) {
+        if (inStoreProductsResponse && inStoreProductsResponse.data) {
           setInStoreProducts(inStoreProductsResponse.data);
         }
       } catch (error) {
@@ -177,4 +177,4 @@ const ItemQuickLinks = () => {
   );
 };
 
-export default ItemQuickLinks;
+export default UserProfile;

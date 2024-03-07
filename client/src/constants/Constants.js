@@ -11,10 +11,11 @@ const AUTH_ROUTE = {
 const ROUTE = {
   HOME: '/',
   ITEM: '/product',
+  PROFILE: '/user/profile',
 };
 
 const SETTINGS_ROUTE = {
-    PROFILE: { title: "Profile", url: "user/profile" },
+    PROFILE: { title: "Profile", url: ROUTE.PROFILE },
     LOGOUT: { title: "Logout", url: AUTH_ROUTE.LOGOUT }
 };
 

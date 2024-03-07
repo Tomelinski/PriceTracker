@@ -15,7 +15,7 @@ import { ROUTE, DOMAIN_NAME } from "../../constants/Constants";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShareIcon from "@mui/icons-material/Share";
-import ItemPrice from "./ItemPrices";
+import ItemPrice from "./ItemPrice";
 
 const ItemCard = ({ product, auth, favorited, manageFavorites }) => {
   const navigate = useNavigate();
@@ -105,7 +105,7 @@ const ItemCard = ({ product, auth, favorited, manageFavorites }) => {
         >
           View Price History
         </Button>
-        <Button variant="outlined" color="error" href={siteURL} size="small">
+        <Button variant="outlined" color="error" onClick={() => window.open(siteURL)} size="small">
           Visit Costco
         </Button>
       </CardActions>

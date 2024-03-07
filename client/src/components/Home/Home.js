@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import { ItemSearch } from "../search";
 import QuickTips from "../tips/QuickTips";
-import ItemQuickLinks from "../Item/ItemQuickLinks";
+import ItemQuickLinks from "../item/ItemQuickLinks";
 
 const Home = () => {
   return (
