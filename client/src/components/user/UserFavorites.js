@@ -4,24 +4,23 @@ import { Grid } from "@mui/material";
 import {
   createFavorites,
   deleteFavorites,
-  fetchDealItems,
   fetchFavoriteIds,
+  fetchFavoriteItems
 } from "../../api/Axios";
 import { DEAL_LIMIT } from "../../constants/Constants";
-import ItemGrid from "./ItemGrid";
+import ItemGrid from "../item/ItemGrid";
 
-const ItemHome = () => {
+const UserFavorites = () => {
   const auth = useContext(AuthContext);
   const [favorites, setFavorites] = useState([]);
-  const [webProducts, setWebProducts] = useState([]);
-  const [inStoreProducts, setInStoreProducts] = useState([]);
-  const [dealsPerPage, setDealsPerPage] = useState(DEAL_LIMIT);
-  const [inStoresPerPage, setInStoresPerPage] = useState(DEAL_LIMIT);
+  const [favoriteProducts, setFavoriteProducts] = useState([]);
+  const [favoritesPerPage, setFavoritesPerPage] = useState(DEAL_LIMIT);
 
   const manageFavorites = async (productId) => {
     try {
       if (auth?.isLoggedIn) {
         const isFavorited = favorites.includes(productId);
+        console.log(favorites);
 
         if (isFavorited) {
           await deleteFavorites(auth.userData.id, productId);
@@ -61,10 +60,10 @@ const ItemHome = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const webProductsResponse = await fetchDealItems(false, dealsPerPage);
+        const favProductsResponse = await fetchFavoriteItems(auth.userData.id, favoritesPerPage);
 
-        if (webProductsResponse?.data) {
-          setWebProducts(webProductsResponse.data);
+        if (favProductsResponse) {
+            setFavoriteProducts(favProductsResponse);
         }
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -72,36 +71,13 @@ const ItemHome = () => {
     };
 
     getProducts();
-  }, [dealsPerPage]);
-
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const inStoreProductsResponse = await fetchDealItems(
-          true,
-          inStoresPerPage
-        );
-
-        if (inStoreProductsResponse?.data) {
-          setInStoreProducts(inStoreProductsResponse.data);
-        }
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
-
-    getProducts();
-  }, [inStoresPerPage]);
+  }, [favoritesPerPage]);
 
   const handleIncreaseItemsPerPage = (e) => {
     e.preventDefault();
 
-    if (e.target.id === "increasAll") {
-      setDealsPerPage((prevDealsPerPage) => prevDealsPerPage + 3);
-    } else if (e.target.id === "increaseWebOnly") {
-      setDealsPerPage((prevDealsPerPage) => prevDealsPerPage + 3);
-    } else if (e.target.id === "increaseInStoreOnly") {
-      setInStoresPerPage((prevInStoresPerPage) => prevInStoresPerPage + 3);
+    if (e.target.id === "increasFavorites") {
+        setFavoritesPerPage((prevPerPage) => prevPerPage + 3);
     }
   };
 
@@ -113,16 +89,8 @@ const ItemHome = () => {
     <Grid container justifyContent="center">
       <Grid item xs={10}>
         <ItemGrid
-          dealType={"webOnly"}
-          items={webProducts}
-          auth={auth}
-          checkFavorite={checkFavorite}
-          manageFavorites={manageFavorites}
-          handleIncreaseItemsPerPage={handleIncreaseItemsPerPage}
-        />
-        <ItemGrid
-          dealType={"inStoreOnly"}
-          items={inStoreProducts}
+          dealType={"Favorites"}
+          items={favoriteProducts}
           auth={auth}
           checkFavorite={checkFavorite}
           manageFavorites={manageFavorites}
@@ -133,4 +101,4 @@ const ItemHome = () => {
   );
 };
 
-export default ItemHome;
+export default UserFavorites;

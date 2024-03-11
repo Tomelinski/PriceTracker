@@ -56,11 +56,8 @@ module.exports = (sequelize) => {
   });
 
   User.associate = (models) => {
-    User.hasMany(models.PriceNotification, { foreignKey: 'userId' });
-  };
-
-  User.associate = (models) => {
-    User.hasMany(models.Favorite, { foreignKey: 'userId' });
+    models.User.belongsToMany(models.Item, { through: models.Favorite, foreignKey: 'userId', as: 'favorites'  });
+    models.User.belongsToMany(models.Item, { through: models.PriceNotification, foreignKey: 'userId', as: 'notifications' });
   };
 
   return User;

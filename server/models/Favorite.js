@@ -24,14 +24,12 @@ const FAVORITE_ATTRIBUTES = {
 };
 
 module.exports = (sequelize) => {
-    const Favorite = sequelize.define('Favorites', FAVORITE_ATTRIBUTES, {
-        timestamps: false,
-        primaryKey: true,
-        unique: 'favoritedItem',
-    });
+    const Favorite = sequelize.define('Favorite', FAVORITE_ATTRIBUTES, { timestamps: false });
 
-    Favorite.belongsTo(sequelize.models.User, { foreignKey: 'userId' });
-    Favorite.belongsTo(sequelize.models.Item, { foreignKey: 'itemId' });
+    Favorite.associate = (models) => {
+        models.Favorite.belongsTo(models.User, { foreignKey: 'userId' });
+        models.Favorite.belongsTo(models.Item, { foreignKey: 'itemId' });
+      };
 
     return Favorite;
 };

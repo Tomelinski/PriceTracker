@@ -1,5 +1,29 @@
 const APP_NAME = process.env.REACT_APP_NAME;
 
+const SERVER_ROUTE = {
+  AUTH: {
+    LOGIN: '/auth/login',
+    LOGIN_GOOGLE: '/auth/google',
+    LOGIN_SUCCESS: '/auth/success',
+    REGISTER: '/auth/register',
+    LOGOUT: '/auth/logout',
+    USER: '/auth/user',
+  },
+  API: {
+    ITEM: '/api/item',
+    DEALS: '/api/deals',
+    FAVORITES: {
+      CREATE: '/api/createFavorite',
+      DELETE: '/api/deleteFavorite',
+    },
+    USER: {
+      FAVORITES: (userId) => `/api/user/${userId}/favorite/ids`,
+      FAVORITE_ITEMS: (userId) => `/api/user/${userId}/favorite/items`,
+      USER: (userId) => `/api/user/${userId}`,
+    },
+  },
+};
+
 const AUTH_ROUTE = {
     LOGIN: '/login',
     LOGIN_GOOGLE: '/auth/google',
@@ -10,8 +34,8 @@ const AUTH_ROUTE = {
 
 const ROUTE = {
   HOME: '/',
-  ITEM: '/product',
-  PROFILE: '/user/profile',
+  ITEM: (itemId) => `/product/${itemId}`,
+  USER: (userId) => `/user/${userId}`,
 };
 
 const SETTINGS_ROUTE = {
@@ -19,9 +43,9 @@ const SETTINGS_ROUTE = {
     LOGOUT: { title: "Logout", url: AUTH_ROUTE.LOGOUT }
 };
 
-const DEAL_LIMIT = 3;
-
 const DOMAIN_NAME = process.env.REACT_APP_URL ?? "http://localhost:3000";
+
+const DEAL_LIMIT = 3;
 
 const QUICK_TIPS = [
   {
@@ -50,4 +74,4 @@ const QUICK_TIPS = [
   }
 ];
 
-export { APP_NAME, AUTH_ROUTE, ROUTE, SETTINGS_ROUTE, QUICK_TIPS, DEAL_LIMIT, DOMAIN_NAME };
+export { APP_NAME, SERVER_ROUTE, AUTH_ROUTE, ROUTE, SETTINGS_ROUTE, DEAL_LIMIT, QUICK_TIPS, DOMAIN_NAME };

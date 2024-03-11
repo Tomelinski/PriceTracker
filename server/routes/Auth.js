@@ -2,7 +2,7 @@ const express = require('express');
 const passport = require("passport");
 const { isAuthenticated } = require("../middlewares/auth");
 const authController = require("../controllers/AuthController");
-const config = require("../database/config/config");
+const config = require("../database/config/app.config.js");
 
 const router = express.Router();
 

@@ -34,12 +34,12 @@ const PRICE_NOTIFICATION_ATTRIBUTES = {
 };
 
 module.exports = (sequelize) => {
-    const PriceNotification = sequelize.define('Price_Notifications', PRICE_NOTIFICATION_ATTRIBUTES, {
-        unique: 'notification',
-    });
+    const PriceNotification = sequelize.define('PriceNotification', PRICE_NOTIFICATION_ATTRIBUTES);
 
-    PriceNotification.belongsTo(sequelize.models.User, { foreignKey: 'userId' });
-    PriceNotification.belongsTo(sequelize.models.Item, { foreignKey: 'itemId' });
+    PriceNotification.associate = (models) => {
+        models.PriceNotification.belongsTo(models.User, { foreignKey: 'userId' });
+        models.PriceNotification.belongsTo(models.Item, { foreignKey: 'itemId' });
+      };
 
     return PriceNotification;
 };

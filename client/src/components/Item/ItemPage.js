@@ -20,23 +20,21 @@ import { Box } from "@mui/material";
 const ItemPage = () => {
   const location = useLocation();
   const itemObject = location.state?.itemObject;
-  const { productID } = useParams();
+  const { productId } = useParams();
   const [product, setProduct] = useState();
 
   useEffect(() => {
     const getProduct = async () => {
       if (!itemObject) {
-        await fetchItem(productID, null).then((res) => {
-          if (res.status === 200) {
-            setProduct(res.data);
-          }
-        });
+        const item = await fetchItem(productId, null);
+
+        setProduct(item);
       } else {
         setProduct(itemObject);
       }
     };
     getProduct();
-  }, [productID, itemObject]);
+  }, [productId, itemObject]);
 
   return (
     <Box mt={3}>

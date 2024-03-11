@@ -2,12 +2,12 @@ const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const passport = require("./passport");
 const { User } = require("../../models");
 const googleConfig = require("../../database/config/google");
-const config = require("../../database/config/config");
+const config = require("../../database/config/app.config.js");
 
 passport.use(
   new GoogleStrategy(
     {
-      clientID: googleConfig.google.clientID,
+      clientID: googleConfig.google.clientId,
       clientSecret: googleConfig.google.clientSecret,
       callbackURL: `${config.development.url}:8000/auth/google/redirect`,
       passReqToCallback: true,

@@ -10,7 +10,7 @@
     "db:create": "node database/SQL/createDatabase.js",
     "db:migrate": "npx sequelize-cli db:migrate",
     "db:seed": "npx sequelize-cli db:seed:all",
-    "fresh": "npm run db:create-db && npm run db:migrate && npm run db:seed",
+    "fresh": "npm run db:create && npm run db:migrate && npm run db:seed",
     "docker:fresh": "docker exec -it pricewatcher-server npm run fresh",
     "docker:flyer": "docker exec -it pricewatcher-server npm run fresh",
     "docker:migrate": "docker exec -it pricewatcher-server npm run db:migrate"

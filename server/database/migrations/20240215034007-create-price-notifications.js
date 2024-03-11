@@ -3,10 +3,10 @@ const { PRICE_NOTIFICATION_ATTRIBUTES } = require("../../models/PriceNotificatio
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Price_Notifications', PRICE_NOTIFICATION_ATTRIBUTES);
+    await queryInterface.createTable('PriceNotifications', PRICE_NOTIFICATION_ATTRIBUTES);
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Price_Notifications');
+    await queryInterface.dropTable('PriceNotifications');
   },
 };

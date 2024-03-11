@@ -1,5 +1,5 @@
 import { api } from './Config';
-import { SERVER_ROUTE } from './Constants';
+import { SERVER_ROUTE } from '../constants/Constants';
 
 export const loginUser = async (credentials) => {
   return api.post(SERVER_ROUTE.AUTH.LOGIN, credentials).then((response) => response.data);

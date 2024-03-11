@@ -16,7 +16,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { AuthContext } from "../../context/authContext";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { APP_NAME, AUTH_ROUTE, ROUTE } from "../../constants/Constants";
 import { ItemSearch } from "../search";
 import Logo from '../../assets/images/Logo.png';
@@ -34,6 +34,7 @@ const theme = createTheme({
 
 const Nav = () => {
   const auth = React.useContext(AuthContext);
+  const navigate = useNavigate();
   const handleLogout = auth.logout;
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -51,6 +52,9 @@ const Nav = () => {
 
   const handleCloseUserMenu = async (setting) => {
     switch (setting) {
+      case "Profile":
+        navigate(ROUTE.USER(auth.userData.id));
+        break;
       case "Logout":
         await handleLogout();
         break;
@@ -166,7 +170,6 @@ const Nav = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
                 <AccountCircleIcon sx={{ fontSize: 45 }}/>
               </IconButton>
             </Tooltip>

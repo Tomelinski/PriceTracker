@@ -20,16 +20,7 @@ import ItemPrice from "./ItemPrice";
 const ItemCard = ({ product, auth, favorited, manageFavorites }) => {
   const navigate = useNavigate();
   const { id, name, imageURL, siteURL } = product;
-  const itemURL = `${ROUTE.ITEM}/${id}`;
-
-  const handleRedirect = async (e) => {
-    e.preventDefault();
-    try {
-      navigate(itemURL);
-    } catch (err) {
-      console.log("Error: " + err);
-    }
-  };
+  const itemURL = ROUTE.ITEM(id);
 
   return (
     <Card sx={{ maxWidth: 375 }}>
@@ -77,6 +68,7 @@ const ItemCard = ({ product, auth, favorited, manageFavorites }) => {
         component="img"
         sx={{ objectFit: "contain", height: 250, margin: ".5em .1em" }}
         image={imageURL}
+        onClick={() => navigate(itemURL)}
         title="Costco Item"
       />
       <CardContent
@@ -100,7 +92,7 @@ const ItemCard = ({ product, auth, favorited, manageFavorites }) => {
         <Button
           variant="outlined"
           color="error"
-          onClick={handleRedirect}
+          onClick={() => navigate(itemURL)}
           size="small"
         >
           View Price History

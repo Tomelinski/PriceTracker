@@ -44,7 +44,6 @@ const App = () => {
     try {
       const response = await authLogout();
       if (response.status === 200) {
-        
         navigate(AUTH_ROUTE.LOGIN); 
       }
     } catch (error) {
@@ -83,7 +82,8 @@ const App = () => {
     routes = (
       <Routes>
         <Route path={ROUTE.HOME} element={<Home />} />
-        <Route path={ROUTE.ITEM} element={<ItemPage />} />
+        <Route path={ROUTE.ITEM(':productId')} element={<ItemPage />} />
+        <Route path={ROUTE.USER(':userId')} element={<UserProfile />} />
         <Route path="*" element={<Navigate to={ROUTE.HOME} />} />
       </Routes>
     );
@@ -91,8 +91,7 @@ const App = () => {
     routes = (
       <Routes>
         <Route path={ROUTE.HOME} element={<Home />} />
-        <Route path={`${ROUTE.ITEM}/:productId`} element={<ItemPage />} />
-        <Route path={`${ROUTE.PROFILE}/:userId`} element={<UserProfile />} />
+        <Route path={ROUTE.ITEM(':productId')} element={<ItemPage />} />
         <Route path={AUTH_ROUTE.LOGIN} element={<Login />} />
         <Route path={AUTH_ROUTE.REGISTER} element={<Register />} />
         <Route path={AUTH_ROUTE.LOGIN_SUCCESS} element={<LoginSuccess />} />
@@ -113,7 +112,7 @@ const App = () => {
         }}
       >
           <Nav />
-          <Grid container justifyContent="center">
+          <Grid mt={3} container justifyContent="center">
             <Grid item xs={10}>
               {routes}  
             </Grid>

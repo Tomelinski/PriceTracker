@@ -5,6 +5,7 @@ import { APP_NAME } from "../../constants/Constants";
 const Footer = () => {
   return (
     <Box
+      mt={3}
       sx={{
         backgroundColor: "#f8f9fa",
         padding: "2rem",

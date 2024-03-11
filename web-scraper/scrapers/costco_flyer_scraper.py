@@ -88,6 +88,7 @@ class CostcoFlyerScraper(BaseScraper):
     def get_latest_log_file(self, folder_path):
         try:
             files = os.listdir(folder_path)
+            files.sort()
 
             if files:
                 return files[-1] 
@@ -109,7 +110,6 @@ class CostcoFlyerScraper(BaseScraper):
             today = date.today()
 
             if (log_file_date >= today):
-                print(f'Log Date: {log_file_date} :: today: {today}')
                 return log_file_name
             
         return ''

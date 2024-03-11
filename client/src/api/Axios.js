@@ -1,27 +1,11 @@
 import { api } from "./Config";
-import { SERVER_ROUTE } from "./Constants";
-
-export const fetchUsers = async (page = 1, limit = 10) => {
-  try {
-    const response = await api.get("/users", {
-      params: { page, limit },
-    });
-    if (response.status === 200) {
-      return response.data;
-    } else {
-      throw new Error(`Failed to fetch Users. Status: ${response.status}`);
-    }
-  } catch (error) {
-    console.error("Error fetching users:", error);
-    throw error;
-  }
-};
+import { SERVER_ROUTE } from '../constants/Constants';
 
 export const fetchItem = async (itemId, itemURL) => {
   try {
     let url;
     let params;
-
+    
     if (itemId) {
       url = `${SERVER_ROUTE.API.ITEM}/${itemId}`;
       params = null;
@@ -32,7 +16,7 @@ export const fetchItem = async (itemId, itemURL) => {
       throw new Error("Either itemId or itemURL must be provided.");
     }
     const response = await api.get(url, { params: params });
-
+    
     if (response.status === 200) {
       return response.data;
     } else {
@@ -44,17 +28,17 @@ export const fetchItem = async (itemId, itemURL) => {
   }
 };
 
-export const fetchDealItems = async (inStoreOnly = false, limit, page = 1) => {
+export const fetchDealItems = async (inStoreOnly = null, limit, page = 1) => {
   try {
     const url = SERVER_ROUTE.API.DEALS;
-    const params = { inStoreOnly, limit, page };
+    const params = { inStoreOnly: inStoreOnly, limit: limit, page: page };
 
     const response = await api.get(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      params: params,
+      params,
     });
 
     if (response.status === 200) {
@@ -68,7 +52,24 @@ export const fetchDealItems = async (inStoreOnly = false, limit, page = 1) => {
   }
 };
 
-export const fetchFavorites = async (userId) => {
+export const fetchFavoriteItems = async (userId, limit, page = 1) => {
+  try {
+    const url = SERVER_ROUTE.API.USER.FAVORITE_ITEMS(userId);
+
+    const response = await api.get(url);
+
+    if (response.status === 200) {
+      return response.data;
+    } else {
+      throw new Error(`Failed to fetch favorites. Status: ${response.status}`);
+    }
+  } catch (error) {
+    console.error("Error fetching user favorites items:", error);
+    throw error;
+  }
+};
+
+export const fetchFavoriteIds = async (userId) => {
   try {
     const url = SERVER_ROUTE.API.USER.FAVORITES(userId);
 
@@ -80,7 +81,7 @@ export const fetchFavorites = async (userId) => {
       throw new Error(`Failed to fetch favorites. Status: ${response.status}`);
     }
   } catch (error) {
-    console.error("Error fetching user favorites Data:", error);
+    console.error("Error fetching user favorite ids:", error);
     throw error;
   }
 };
@@ -96,7 +97,7 @@ export const createFavorites = async (userId, itemId) => {
 
     return response.data;
   } catch (error) {
-    console.error("Error fetching user favorites Data:", error);
+    console.error("Error creating favorite:", error);
     throw error;
   }
 };
@@ -112,7 +113,7 @@ export const deleteFavorites = async (userId, itemId) => {
 
     return response.data;
   } catch (error) {
-    console.error("Error fetching user favorites Data:", error);
+    console.error("Error deleting favorite:", error);
     throw error;
   }
 };

@@ -1,6 +1,6 @@
-const { Favorite } = require("../models");
+const { Favorite, User, Item } = require("../models");
 
-const getUserFavorites = async (req, res) => {
+const getUserFavoriteIds = async (req, res) => {
   try {
     const userFavorites = await Favorite.findAll({
       where: {
@@ -8,31 +8,61 @@ const getUserFavorites = async (req, res) => {
       },
     });
 
-    if (!userFavorites) {
-      res.status(404).json({ error: "Favorites not found" });
+    if (userFavorites?.length > 0) {
+      const favoriteIds = userFavorites.map((favorite) => favorite.itemId);
+
+      res.json(favoriteIds);
     } else {
-        const favoriteIds = userFavorites.map((favorite) => favorite.itemId);
-    
-        res.json(favoriteIds);
+      res.json([]);
     }
   } catch (e) {
     res.status(500).json({ error: e });
   }
 };
 
+const getUserFavoriteItems = async (req, res) => {
+  try {
+    const user = await User.findOne({
+      where: {
+        id: req.params.userId,
+      },
+      include: [
+        {
+          model: Item,
+          as: 'favorites',
+          through: {
+            attributes: []
+          }
+        },
+      ],
+    });
+
+    if (user) {
+      res.json(user.favorites);
+    } else {
+      res.json([]);
+    }
+  } catch (e) {
+    console.log("error: ", e);
+    res.status(500).json({ message: "Unexpected error occurred", error: e });
+  }
+};
+
 const createFavorite = async (req, res) => {
   try {
-    const itemId = req.body.itemId;
     const userId = req.body.userId;
+    const itemId = req.body.itemId;
 
     const existingFavorite = await Favorite.findOne({
       where: { userId: userId, itemId: itemId },
     });
 
     if (existingFavorite) {
-      res.status(409).json({ success: false, message: "Item already favorited" });
+      res
+        .status(409)
+        .json({ success: false, message: "Item already favorited" });
     } else {
-      await Favorite.create({
+      const fav = await Favorite.create({
         itemId: itemId,
         userId: userId,
       });
@@ -54,7 +84,9 @@ const deleteFavorite = async (req, res) => {
     });
 
     if (!favoriteItem) {
-      res.status(404).json({ success: false, message: "User or FavoriteItem not found" });
+      res
+        .status(404)
+        .json({ success: false, message: "User or FavoriteItem not found" });
     } else {
       await favoriteItem.destroy();
       res.status(200).json({ success: true, message: "Item Deleted" });
@@ -66,7 +98,8 @@ const deleteFavorite = async (req, res) => {
 };
 
 module.exports = {
-  getUserFavorites,
+  getUserFavoriteIds,
+  getUserFavoriteItems,
   createFavorite,
   deleteFavorite,
 };

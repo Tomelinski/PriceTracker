@@ -17,7 +17,7 @@ const ITEM_ATTRIBUTES = {
     },
     inStoreOnly: {
         type: DataTypes.BOOLEAN,
-        default: false
+        defaultValue: false
     },
     specifications: {
         type: DataTypes.JSON,
@@ -82,11 +82,8 @@ module.exports = (sequelize) => {
     const Item = sequelize.define('Item', ITEM_ATTRIBUTES);
 
     Item.associate = (models) => {
-        Item.hasOne(models.PriceNotification, { foreignKey: 'itemId' });
-    };
-    
-    Item.associate = (models) => {
-        Item.hasMany(models.Favorite, { foreignKey: 'itemId' });
+        models.Item.belongsToMany(models.User, { through: models.Favorite, foreignKey: 'itemId' });
+        models.Item.belongsToMany(models.User, { through: models.PriceNotification, foreignKey: 'itemId' });
     };
   
     return Item;

@@ -19,9 +19,9 @@ const getUserNotifications = async (req, res) => {
 };
 
 const createNotification = async (req, res) => {
-  const userId = req.query.userId;
-  const itemId = req.query.itemId;
-  const threshold = req.query.threshold;
+  const userId = req.body.userId;
+  const itemId = req.body.itemId;
+  const threshold = req.body.threshold;
 
   try {
     const existingNotification = await priceNotification.findOne({
@@ -44,8 +44,8 @@ const createNotification = async (req, res) => {
 };
 
 const deleteNotification = async (req, res) => {
-  const userId = req.query.userId;
-  const itemId = req.query.itemId;
+  const userId = req.body.userId;
+  const itemId = req.body.itemId;
 
   try {
     const notification = priceNotification.findOne({
@@ -68,8 +68,8 @@ const deleteNotification = async (req, res) => {
 
 const updateNotification = async (req, res) => {
   try {
-    const itemId = req.query.itemId;
-    const userId = req.query.userId;
+    const itemId = req.body.itemId;
+    const userId = req.body.userId;
 
     const notification = await priceNotification.findOne({
       where: { userId: userId, itemId: itemId },
@@ -78,7 +78,7 @@ const updateNotification = async (req, res) => {
     if (!notification) {
       res.status(404).json({ success: false, message: "Notification not found" });
     } else {
-      await notification.update({ threshold: req.query.threshold });
+      await notification.update({ threshold: req.body.threshold });
       res.status(200).json({ success: true, message: "notification updated" });
     }
   } catch (e) {
