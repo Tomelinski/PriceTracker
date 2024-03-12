@@ -23,8 +23,9 @@ const App = () => {
   const login = useCallback((user, token, expirationDate) => {
     setToken(token);
     setUserData(user);
+    let devMutliplier = 6;
     const tokenExpirationDate =
-      expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
+      expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60 * devMutliplier);
     setTokenExpirationDate(tokenExpirationDate);
 
     localStorage.setItem(

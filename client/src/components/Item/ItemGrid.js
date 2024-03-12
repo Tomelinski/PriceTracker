@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
-import ItemCard from "./ItemCard";
+import { ItemCard } from ".";
 
 const ItemGrid = ({
   dealType,
@@ -35,7 +35,7 @@ const ItemGrid = ({
       </Box>
       <Box mt={3}>
         <Button
-          id={`increase${dealType}`}
+          id={`increase-${dealType}`}
           variant="text"
           color="error"
           onClick={handleIncreaseItemsPerPage}

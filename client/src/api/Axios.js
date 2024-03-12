@@ -56,7 +56,7 @@ export const fetchFavoriteItems = async (userId, limit, page = 1) => {
   try {
     const url = SERVER_ROUTE.API.USER.FAVORITE_ITEMS(userId);
 
-    const response = await api.get(url);
+    const response = await api.get(url, { limit: limit, page: page } );
 
     if (response.status === 200) {
       return response.data;

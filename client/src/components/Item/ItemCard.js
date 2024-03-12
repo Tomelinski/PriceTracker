@@ -15,7 +15,7 @@ import { ROUTE, DOMAIN_NAME } from "../../constants/Constants";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShareIcon from "@mui/icons-material/Share";
-import ItemPrice from "./ItemPrice";
+import { ItemPrice } from ".";
 
 const ItemCard = ({ product, auth, favorited, manageFavorites }) => {
   const navigate = useNavigate();

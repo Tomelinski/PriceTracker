@@ -8,7 +8,7 @@ import {
   fetchFavoriteItems
 } from "../../api/Axios";
 import { DEAL_LIMIT } from "../../constants/Constants";
-import ItemGrid from "../item/ItemGrid";
+import { ItemGrid } from "../item";
 
 const UserFavorites = () => {
   const auth = useContext(AuthContext);
@@ -76,7 +76,7 @@ const UserFavorites = () => {
   const handleIncreaseItemsPerPage = (e) => {
     e.preventDefault();
 
-    if (e.target.id === "increasFavorites") {
+    if (e.target.id === "increase-favorites") {
         setFavoritesPerPage((prevPerPage) => prevPerPage + 3);
     }
   };
@@ -89,7 +89,7 @@ const UserFavorites = () => {
     <Grid container justifyContent="center">
       <Grid item xs={10}>
         <ItemGrid
-          dealType={"Favorites"}
+          dealType={"favorites"}
           items={favoriteProducts}
           auth={auth}
           checkFavorite={checkFavorite}

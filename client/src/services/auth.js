@@ -4,6 +4,7 @@ class AuthService {
   async login(username, password) {
     const response = await loginUser({ username, password });
 
+    console.log('Normal logged in');
     if (response.accessToken) {
       localStorage.setItem("user", JSON.stringify(response));
     }
@@ -13,6 +14,7 @@ class AuthService {
 
   async getGoogleUser() {
     const response = await getGoogleUser();
+    console.log('google logged in');
     return response;
   }
 

@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Grid } from "@mui/material";
-import UserFavorites from "./UserFavorites";
-import UserBanner from "./UserBanner";
+import { UserFavorites, UserBanner } from "./";
 
 const UserProfile = () => {
 

@@ -8,7 +8,7 @@ import {
   fetchFavoriteIds,
 } from "../../api/Axios";
 import { DEAL_LIMIT } from "../../constants/Constants";
-import ItemGrid from "./ItemGrid";
+import { ItemGrid } from ".";
 
 const ItemHome = () => {
   const auth = useContext(AuthContext);
@@ -96,11 +96,11 @@ const ItemHome = () => {
   const handleIncreaseItemsPerPage = (e) => {
     e.preventDefault();
 
-    if (e.target.id === "increasAll") {
+    if (e.target.id === "increas-all") {
       setDealsPerPage((prevDealsPerPage) => prevDealsPerPage + 3);
-    } else if (e.target.id === "increaseWebOnly") {
+    } else if (e.target.id === "increase-webOnly") {
       setDealsPerPage((prevDealsPerPage) => prevDealsPerPage + 3);
-    } else if (e.target.id === "increaseInStoreOnly") {
+    } else if (e.target.id === "increase-inStoreOnly") {
       setInStoresPerPage((prevInStoresPerPage) => prevInStoresPerPage + 3);
     }
   };

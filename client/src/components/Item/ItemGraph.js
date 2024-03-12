@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ItemLegend from "./ItemLegend";
+import { ItemLegend } from ".";
 import { Paper, Grid, Typography, Divider } from "@mui/material";
 
 import Plotly from "plotly.js-dist";
@@ -77,9 +77,7 @@ const ItemGraph = ({ priceHistory, retailer }) => {
 
   useEffect(() => {
     if (graph.length <= 0 && prices.length > 0) {
-      CHART_NAMES.map((name, i) => {
-        makeGraph(name, CHART_COLORS[i]);
-      });
+      CHART_NAMES.map((name, i) => makeGraph(name, CHART_COLORS[i]));
     }
   }, [legend]);
 

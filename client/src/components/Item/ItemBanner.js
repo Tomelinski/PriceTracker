@@ -8,8 +8,7 @@ import {
   Button,
   CardMedia,
 } from "@mui/material";
-import ItemSpecList from "./ItemSpecList";
-import ItemPrice from "./ItemPrice";
+import { ItemSpecList, ItemPrice } from ".";
 
 const ItemBanner = ({ product }) => {
   const {
