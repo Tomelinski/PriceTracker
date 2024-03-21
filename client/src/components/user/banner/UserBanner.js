@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
-import { AuthContext } from "../../context/authContext";
-import { Paper, Typography, Grid, Box } from "@mui/material";
+import {
+  Paper, Typography, Grid, Box,
+} from "@mui/material";
+import AuthContext from "../../../context/authContext";
 
 const UserBanner = () => {
   const auth = useContext(AuthContext);

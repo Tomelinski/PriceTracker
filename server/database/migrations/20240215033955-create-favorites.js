@@ -1,4 +1,3 @@
-'use strict';
 const { FAVORITE_ATTRIBUTES } = require("../../models/Favorite");
 
 module.exports = {

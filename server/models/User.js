@@ -1,5 +1,5 @@
 const { DataTypes } = require("sequelize");
-const { bcrypt, saltRounds } = require("../database/config/bcryptConfig.js");
+const { bcrypt, saltRounds } = require("../database/config/bcryptConfig");
 
 const USER_ATTRIBUTES = {
   id: {
@@ -56,7 +56,7 @@ module.exports = (sequelize) => {
   });
 
   User.associate = (models) => {
-    models.User.belongsToMany(models.Item, { through: models.Favorite, foreignKey: 'userId', as: 'favorites'  });
+    models.User.belongsToMany(models.Item, { through: models.Favorite, foreignKey: 'userId', as: 'favorites' });
     models.User.belongsToMany(models.Item, { through: models.PriceNotification, foreignKey: 'userId', as: 'notifications' });
   };
 

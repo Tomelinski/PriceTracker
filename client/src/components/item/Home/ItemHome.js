@@ -1,18 +1,22 @@
 import React, { useState, useEffect, useContext } from "react";
-import { AuthContext } from "../../context/authContext";
 import { Grid } from "@mui/material";
+import AuthContext from "../../../context/authContext";
 import {
-  createFavorites,
-  deleteFavorites,
+  createFavorite,
+  deleteFavorite,
+  createNotification,
+  deleteNotification,
   fetchDealItems,
   fetchFavoriteIds,
-} from "../../api/Axios";
-import { DEAL_LIMIT } from "../../constants/Constants";
-import { ItemGrid } from ".";
+  fetchNotificationIds,
+} from "../../../api/Axios";
+import { DEAL_LIMIT } from "../../../constants/Constants";
+import { ItemGrid } from "../Grid";
 
 const ItemHome = () => {
   const auth = useContext(AuthContext);
   const [favorites, setFavorites] = useState([]);
+  const [notifications, setNotifications] = useState([]);
   const [webProducts, setWebProducts] = useState([]);
   const [inStoreProducts, setInStoreProducts] = useState([]);
   const [dealsPerPage, setDealsPerPage] = useState(DEAL_LIMIT);
@@ -24,16 +28,14 @@ const ItemHome = () => {
         const isFavorited = favorites.includes(productId);
 
         if (isFavorited) {
-          await deleteFavorites(auth.userData.id, productId);
+          await deleteFavorite(auth.userData.id, productId);
         } else {
-          await createFavorites(auth.userData.id, productId);
+          await createFavorite(auth.userData.id, productId);
         }
 
-        setFavorites((prevFavorites) =>
-          isFavorited
-            ? prevFavorites.filter((id) => id !== productId)
-            : [...prevFavorites, productId]
-        );
+        setFavorites((prevFavorites) => (isFavorited
+          ? prevFavorites.filter((id) => id !== productId)
+          : [...prevFavorites, productId]));
       }
     } catch (error) {
       console.error("Error updating favorites:", error);
@@ -58,6 +60,49 @@ const ItemHome = () => {
     getFavorites();
   }, [auth]);
 
+  const manageNotifications = async (productId, threshold) => {
+    try {
+      if (auth?.isLoggedIn) {
+        const isActiveNotification = notifications.includes(productId);
+        console.log(`active${isActiveNotification}`);
+
+        if (isActiveNotification) {
+          console.log(`delete${productId}`);
+          await deleteNotification(auth.userData.id, productId);
+        } else {
+          console.log(`create${productId}`);
+          await createNotification(auth.userData.id, productId, threshold);
+        }
+
+        setNotifications((prevNotifications) => (isActiveNotification
+          ? prevNotifications.filter((id) => id !== productId)
+          : [...prevNotifications, productId]));
+      }
+    } catch (error) {
+      console.error("Error updating notifications:", error);
+    }
+  };
+
+  useEffect(() => {
+    const getNotifications = async () => {
+      try {
+        if (auth?.isLoggedIn) {
+          const notificationsResponse = await fetchNotificationIds(
+            auth.userData.id,
+          );
+
+          if (notificationsResponse) {
+            setNotifications(notificationsResponse);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching notifications:", error);
+      }
+    };
+
+    getNotifications();
+  }, [auth]);
+
   useEffect(() => {
     const getProducts = async () => {
       try {
@@ -79,7 +124,7 @@ const ItemHome = () => {
       try {
         const inStoreProductsResponse = await fetchDealItems(
           true,
-          inStoresPerPage
+          inStoresPerPage,
         );
 
         if (inStoreProductsResponse?.data) {
@@ -106,26 +151,40 @@ const ItemHome = () => {
   };
 
   const checkFavorite = (productId) => {
-    return favorites.length > 0 ? favorites.includes(productId) : false;
+    if (auth?.isLoggedIn) {
+      return favorites.length > 0 ? favorites.includes(productId) : false;
+    }
+    return false;
+  };
+
+  const checkNotification = (productId) => {
+    if (auth?.isLoggedIn) {
+      return notifications.length > 0 ? notifications.includes(productId) : false;
+    }
+    return false;
   };
 
   return (
     <Grid container justifyContent="center">
       <Grid item xs={10}>
         <ItemGrid
-          dealType={"webOnly"}
+          dealType="webOnly"
           items={webProducts}
           auth={auth}
           checkFavorite={checkFavorite}
           manageFavorites={manageFavorites}
+          checkNotification={checkNotification}
+          manageNotifications={manageNotifications}
           handleIncreaseItemsPerPage={handleIncreaseItemsPerPage}
         />
         <ItemGrid
-          dealType={"inStoreOnly"}
+          dealType="inStoreOnly"
           items={inStoreProducts}
           auth={auth}
           checkFavorite={checkFavorite}
           manageFavorites={manageFavorites}
+          checkNotification={checkNotification}
+          manageNotifications={manageNotifications}
           handleIncreaseItemsPerPage={handleIncreaseItemsPerPage}
         />
       </Grid>

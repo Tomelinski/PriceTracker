@@ -1,6 +1,6 @@
 const axios = require("axios");
 const { sequelize, Item } = require("../models");
-const { development } = require("../database/config/app.config.js");
+const { development } = require("../database/config/app.config");
 const paginate = require("../helpers/route/pagination");
 
 const getItem = async (req, res) => {
@@ -24,26 +24,27 @@ const getItem = async (req, res) => {
       if (created) {
         const scraperURL = `${development.webScraper}/item`;
         const axiosResponse = await axios.get(scraperURL, {
-          params: { itemURL: itemURL },
+          params: { itemURL },
         });
 
         if (axiosResponse.data) {
-          const { title, retailer, specifications, image, price } =
-            axiosResponse.data;
+          const {
+            title, retailer, specifications, image, price,
+          } = axiosResponse.data;
 
           const currentDate = new Date().toISOString().split("T")[0];
           const priceHistory = [{ price, date: currentDate }];
 
-          const updatedItem = await item.update(
+          await item.update(
             {
               name: title || null,
               retailer: retailer || null,
               specifications: specifications || {},
               price: price || null,
-              priceHistory: priceHistory,
+              priceHistory,
               imageURL: image || null,
             },
-            { transaction: t }
+            { transaction: t },
           );
         }
       }
@@ -53,24 +54,22 @@ const getItem = async (req, res) => {
   } catch (e) {
     // Rollback the transaction on error
     console.error("Error during transaction:", e);
-    res.status(500).json({ error: e.message });
-    return;
+    return res.status(500).json({ error: e.message });
   }
 
   return res.json(result);
 };
 
 const getFlyer = async (req, res) => {
-  let result;
   let counter = 0;
-  let errors = [];
+  const errors = [];
   const flyerURL = req.query.flyerURL ?? null;
 
   try {
     const scraperURL = `${development.webScraper}/flyer`;
     const axiosResponse = await axios
       .get(scraperURL, {
-        params: { flyerURL: flyerURL },
+        params: { flyerURL },
       })
       .catch((e) => {
         console.error("Error in Axios request:", e);
@@ -78,12 +77,13 @@ const getFlyer = async (req, res) => {
       });
 
     if (
-      axiosResponse.status === 200 &&
-      axiosResponse.data &&
-      axiosResponse.data.length > 0
+      axiosResponse.status === 200
+      && axiosResponse.data
+      && axiosResponse.data.length > 0
     ) {
-      result = await sequelize.transaction(async (t) => {
-        for (const itemObj of axiosResponse.data) {
+      await sequelize.transaction(async (t) => {
+        // for (const itemObj of axiosResponse.data) {
+        axiosResponse.data.map(async (itemObj) => {
           let created = null;
           let item = {};
           let inStoreOnly = false;
@@ -105,7 +105,8 @@ const getFlyer = async (req, res) => {
             if (!created) {
               return;
             }
-            counter++;
+            // eslint-disable-next-line no-plusplus
+            counter += 1;
 
             const {
               retailer,
@@ -140,47 +141,44 @@ const getFlyer = async (req, res) => {
 
             const dealAmount = originalPrice - price;
             const dealPercent = parseFloat(
-              ((1 - price / originalPrice) * 100).toFixed(2)
+              ((1 - price / originalPrice) * 100).toFixed(2),
             );
 
             const dealAmountWeight = 1.1;
             const dealPercentWeight = 0.8;
             const dealScoreAssists = 1.2;
 
-            const dealAmountScore =
-              Math.max(Math.min(dealAmount / originalPrice, 1), 0) * 10;
-            const dealPercentScore =
-              Math.max(Math.min(dealPercent / 100, 1), 0) * 10;
+            const dealAmountScore = Math.max(Math.min(dealAmount / originalPrice, 1), 0) * 10;
+            const dealPercentScore = Math.max(Math.min(dealPercent / 100, 1), 0) * 10;
 
-            const dealScore =
-              (dealAmountScore * dealAmountWeight +
-                dealPercentScore * dealPercentWeight) *
-              dealScoreAssists;
+            const dealScore = (dealAmountScore * dealAmountWeight
+                + dealPercentScore * dealPercentWeight)
+              * dealScoreAssists;
 
-            const updatedItem = await item.update(
+            await item.update(
               {
                 name: title || null,
                 retailer: retailer || null,
-                inStoreOnly: inStoreOnly,
+                inStoreOnly,
                 specifications: specifications || {},
-                price: price,
+                price,
                 prevPrice: originalPrice,
-                dealAmount: dealAmount,
-                dealPercent: dealPercent,
-                dealScore: dealScore,
-                priceHistory: priceHistory,
+                dealAmount,
+                dealPercent,
+                dealScore,
+                priceHistory,
                 imageURL: image || null,
               },
-              { transaction: t }
+              { transaction: t },
             );
           } catch (e) {
             console.error("Error processing item:", e);
             errors.push(e);
           }
-        }
+        });
       });
     } else {
-      e = "No item retrieved";
+      const e = "No item retrieved";
       console.log(e);
       errors.push(e);
     }
@@ -205,10 +203,9 @@ const getFlyer = async (req, res) => {
 
 const getDeals = async (req, res) => {
   try {
-    const conditions =
-      req.query.inStoreOnly !== undefined
-        ? { inStoreOnly: req.query.inStoreOnly === "true" || false }
-        : {};
+    const conditions = req.query.inStoreOnly !== undefined
+      ? { inStoreOnly: req.query.inStoreOnly === "true" || false }
+      : {};
     const page = req.query.page || 1;
     const limit = req.query.limit || 3;
 
@@ -221,13 +218,13 @@ const getDeals = async (req, res) => {
       conditions,
       page,
       limit,
-      order
+      order,
     );
 
     return res.json({ totalCount, data });
   } catch (e) {
     console.error("Error fetching deals:", e);
-    res.status(500).json({ error: "Internal Server Error" });
+    return res.status(500).json({ error: "Internal Server Error" });
   }
 };
 

@@ -17,7 +17,7 @@ const ItemSearch = () => {
       const item = await fetchItem(null, productURL);
       navigate(ROUTE.ITEM(item.id), { state: { itemObject: item } });
     } catch (err) {
-      console.log("Error: " + err);
+      console.log(`Error: ${err}`);
     }
   };
 

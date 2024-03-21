@@ -1,4 +1,3 @@
-'use strict';
 const { USER_ATTRIBUTES } = require("../../models/User");
 
 module.exports = {

@@ -23,10 +23,6 @@ const PRICE_NOTIFICATION_ATTRIBUTES = {
     type: DataTypes.DECIMAL(12, 2),
     allowNull: false,
   },
-  frequency: {
-    allowNull: false,
-    type: DataTypes.DATE,
-  },
   createdAt: {
     allowNull: false,
     type: DataTypes.DATE,
@@ -40,7 +36,7 @@ const PRICE_NOTIFICATION_ATTRIBUTES = {
 module.exports = (sequelize) => {
   const PriceNotification = sequelize.define(
     "PriceNotification",
-    PRICE_NOTIFICATION_ATTRIBUTES
+    PRICE_NOTIFICATION_ATTRIBUTES,
   );
 
   PriceNotification.associate = (models) => {

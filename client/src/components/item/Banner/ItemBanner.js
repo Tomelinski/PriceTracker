@@ -1,4 +1,5 @@
 import * as React from "react";
+import PropTypes from 'prop-types';
 import {
   Paper,
   Typography,
@@ -8,16 +9,12 @@ import {
   Button,
   CardMedia,
 } from "@mui/material";
-import { ItemSpecList, ItemPrice } from ".";
+import { ItemSpecList } from "../SpecList";
+import { ItemPrice } from "../Price";
 
 const ItemBanner = ({ product }) => {
   const {
-    name,
-    imageURL,
-    inStoreOnly,
-    specifications,
-    siteURL,
-    retailer,
+    name, imageURL, inStoreOnly, specifications, siteURL, retailer,
   } = product;
 
   return (
@@ -61,15 +58,16 @@ const ItemBanner = ({ product }) => {
                 {name}
               </Typography>
             </Box>
-            <ItemPrice product={product}/>
+            <ItemPrice product={product} />
             <Box mb={3}>
               <ItemSpecList specs={specifications} />
             </Box>
-            <Box position="absolute" bottom={"3em"}>
+            <Box position="absolute" bottom="3em">
               <Button
                 variant="outlined"
                 color="error"
                 size="large"
+                /* eslint-disable react/jsx-props-no-spreading */
                 {...(inStoreOnly ? { disabled: true } : {})}
               >
                 <Link
@@ -91,4 +89,9 @@ const ItemBanner = ({ product }) => {
     </Paper>
   );
 };
+
+ItemBanner.propTypes = {
+  product: PropTypes.object.isRequired,
+};
+
 export default ItemBanner;

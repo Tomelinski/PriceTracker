@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
-import { fetchItem } from "../../api/Axios";
-import { ItemBanner, ItemGraph } from ".";
 import { Box } from "@mui/material";
+import { fetchItem } from "../../../api/Axios";
+import { ItemBanner } from "../Banner";
+import { ItemGraph } from "../Graph";
 
 const ItemPage = () => {
   const location = useLocation();

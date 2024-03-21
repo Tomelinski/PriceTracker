@@ -1,15 +1,19 @@
 import './App.css';
-import React, { useState, useCallback, useEffect } from "react";
-import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
-import { AuthContext } from "./context/authContext";
+import React, {
+  useState, useCallback, useEffect, useMemo,
+} from "react";
+import {
+  Route, Routes, Navigate, useNavigate,
+} from "react-router-dom";
+import { Grid } from '@mui/material';
+import AuthContext from "./context/authContext";
 import { Login, LoginSuccess, Register } from './components/auth';
 import { logout as authLogout } from "./api/Auth";
 import { Nav } from "./components/nav";
 import { Home } from "./components/home";
-import { ItemPage } from "./components/item";
-import { UserProfile } from "./components/user";
+import { ItemPage } from "./components/item/Page";
+import { UserProfile } from "./components/user/profile";
 import { AUTH_ROUTE, ROUTE } from './constants/Constants';
-import { Grid } from '@mui/material';
 import { Footer } from './components/footer';
 
 let logoutTimer;
@@ -20,21 +24,21 @@ const App = () => {
   const [tokenExpirationDate, setTokenExpirationDate] = useState();
   const navigate = useNavigate();
 
-  const login = useCallback((user, token, expirationDate) => {
-    setToken(token);
+  const login = useCallback((user, newToken, expirationDate) => {
+    setToken(newToken);
     setUserData(user);
-    let devMutliplier = 6;
-    const tokenExpirationDate =
-      expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60 * devMutliplier);
-    setTokenExpirationDate(tokenExpirationDate);
+    const devMutliplier = 6;
+    const tokenExpireDate = expirationDate
+      || new Date(new Date().getTime() + 1000 * 60 * 60 * devMutliplier);
+    setTokenExpirationDate(tokenExpireDate);
 
     localStorage.setItem(
       "userData",
       JSON.stringify({
         userData: user,
         token,
-        expiration: tokenExpirationDate.toISOString(),
-      })
+        expiration: tokenExpireDate.toISOString(),
+      }),
     );
   }, []);
 
@@ -45,7 +49,7 @@ const App = () => {
     try {
       const response = await authLogout();
       if (response.status === 200) {
-        navigate(AUTH_ROUTE.LOGIN); 
+        navigate(AUTH_ROUTE.LOGIN);
       }
     } catch (error) {
       console.error('Error during logout:', error);
@@ -55,8 +59,7 @@ const App = () => {
 
   useEffect(() => {
     if (token && tokenExpirationDate) {
-      const remainingTime =
-        tokenExpirationDate.getTime() - new Date().getTime();
+      const remainingTime = tokenExpirationDate.getTime() - new Date().getTime();
       logoutTimer = setTimeout(logout, remainingTime);
     } else {
       clearTimeout(logoutTimer);
@@ -66,14 +69,14 @@ const App = () => {
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("userData"));
     if (
-      storedData &&
-      storedData.token &&
-      new Date(storedData.expiration) > new Date()
+      storedData
+      && storedData.token
+      && new Date(storedData.expiration) > new Date()
     ) {
       login(
         storedData.userData,
         storedData.token,
-        new Date(storedData.expiration)
+        new Date(storedData.expiration),
       );
     }
   }, [login]);
@@ -104,21 +107,21 @@ const App = () => {
   return (
     <div className="App">
       <AuthContext.Provider
-        value={{
+        value={useMemo(() => ({
           isLoggedIn: !!token,
           token,
           userData,
-          login: login,
-          logout: logout,
-        }}
+          login,
+          logout,
+        }), [token, userData, login, logout])}
       >
-          <Nav />
-          <Grid mt={3} container justifyContent="center">
-            <Grid item xs={10}>
-              {routes}  
-            </Grid>
+        <Nav />
+        <Grid mt={3} container justifyContent="center">
+          <Grid item xs={10}>
+            {routes}
           </Grid>
-          <Footer />
+        </Grid>
+        <Footer />
       </AuthContext.Provider>
     </div>
   );

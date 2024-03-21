@@ -1,9 +1,11 @@
 import React, { useContext, useState } from "react";
+import {
+  TextField, Button, Grid, Typography, Box,
+} from "@mui/material";
+import Stack from "@mui/material/Stack";
 import { URL } from "../../api/Config";
 import { loginUser, getGoogleUser } from "../../api/Auth";
-import { TextField, Button, Grid, Typography, Box } from "@mui/material";
-import Stack from "@mui/material/Stack";
-import { AuthContext } from "../../context/authContext";
+import AuthContext from "../../context/authContext";
 import { AUTH_ROUTE } from "../../constants/Constants";
 
 const Login = () => {
@@ -13,7 +15,7 @@ const Login = () => {
 
   const loginGoogle = async () => {
     const response = await getGoogleUser().catch((err) => {
-      console.log("An Error has occurred while authenticating");
+      console.log("An Error has occurred while authenticating:", err);
     });
 
     if (response) {
@@ -37,7 +39,7 @@ const Login = () => {
     const newWindow = window.open(
       googleLoginURL,
       "_blank",
-      "width=500, height=600"
+      "width=500, height=600",
     );
     if (newWindow) {
       timer = setInterval(() => {
@@ -99,7 +101,9 @@ const Login = () => {
           </Box>
           <Box mt={2} align="center">
             <p>
-              Don't have an account? <a href={AUTH_ROUTE.REGISTER}>Register here</a>
+              Don&apos;t have an account?
+              {' '}
+              <a href={AUTH_ROUTE.REGISTER}>Register here</a>
             </p>
           </Box>
         </Box>

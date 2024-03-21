@@ -33,32 +33,30 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-const QuickTips = () => {
-  return (
-    <Grid container justifyContent="center">
-      <Grid item xs={8}>
-        <Box mb={3}>
-          <Typography variant="h4" align="center">
-            Quick Tips
-          </Typography>
-        </Box>
-        <TableContainer component={Paper}>
-          <Table aria-label="Quick tips">
-            <TableBody>
-              {QUICK_TIPS.map(({ title, description }) => (
-                <StyledTableRow key={title}>
-                  <StyledTableCell component="th" scope="row">
-                    {title}
-                  </StyledTableCell>
-                  <StyledTableCell>{description}</StyledTableCell>
-                </StyledTableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Grid>
+const QuickTips = () => (
+  <Grid container justifyContent="center">
+    <Grid item xs={8}>
+      <Box mb={3}>
+        <Typography variant="h4" align="center">
+          Quick Tips
+        </Typography>
+      </Box>
+      <TableContainer component={Paper}>
+        <Table aria-label="Quick tips">
+          <TableBody>
+            {QUICK_TIPS.map(({ title, description }) => (
+              <StyledTableRow key={title}>
+                <StyledTableCell component="th" scope="row">
+                  {title}
+                </StyledTableCell>
+                <StyledTableCell>{description}</StyledTableCell>
+              </StyledTableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </Grid>
-  );
-};
+  </Grid>
+);
 
 export default QuickTips;

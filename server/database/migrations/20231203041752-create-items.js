@@ -1,4 +1,3 @@
-'use strict';
 const { ITEM_ATTRIBUTES } = require("../../models/Item");
 
 module.exports = {

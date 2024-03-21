@@ -1,4 +1,5 @@
 import * as React from "react";
+import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
 import {
   Paper,
@@ -29,24 +30,25 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-const ItemSpecList = ({ specs }) => {
+const ItemSpecList = ({ specs }) => (
+  <TableContainer component={Paper}>
+    <Table aria-label="Product Specifications">
+      <TableBody>
+        {Object.entries(specs).map(([key, value]) => (
+          <StyledTableRow key={key}>
+            <StyledTableCell component="th" scope="row">
+              {key}
+            </StyledTableCell>
+            <StyledTableCell>{value}</StyledTableCell>
+          </StyledTableRow>
+        ))}
+      </TableBody>
+    </Table>
+  </TableContainer>
+);
 
-  return (
-    <TableContainer component={Paper}>
-      <Table aria-label="Product Specifications">
-        <TableBody>
-          {Object.entries(specs).map(([key, value]) => (
-            <StyledTableRow key={key}>
-              <StyledTableCell component="th" scope="row">
-                {key}
-              </StyledTableCell>
-              <StyledTableCell>{value}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
+ItemSpecList.propTypes = {
+  specs: PropTypes.array.isRequired,
 };
 
 export default ItemSpecList;

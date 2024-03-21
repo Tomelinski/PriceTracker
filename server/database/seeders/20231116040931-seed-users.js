@@ -1,4 +1,3 @@
-"use strict";
 const { bcrypt, saltRounds } = require('../config/bcryptConfig.js');
 
 module.exports = {

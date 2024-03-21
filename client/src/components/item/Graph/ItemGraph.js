@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { ItemLegend } from ".";
-import { Paper, Grid, Typography, Divider } from "@mui/material";
-
+import PropTypes from 'prop-types';
+import {
+  Paper, Grid, Typography, Divider,
+} from "@mui/material";
 import Plotly from "plotly.js-dist";
+import { ItemLegend } from "../Legend";
 
 const ItemGraph = ({ priceHistory, retailer }) => {
   const [dates, setDates] = useState([]);
@@ -23,10 +25,9 @@ const ItemGraph = ({ priceHistory, retailer }) => {
   const hoverDoted = (name) => `${name} <i>Price</i>: $%{y:.2f}`;
 
   const makeGraph = (name, color = "blue") => {
-    const yVal =
-      name === "Highest" || name === "Lowest" || name === "Average"
-        ? Array(prices.length).fill(legend[name])
-        : prices;
+    const yVal = name === "Highest" || name === "Lowest" || name === "Average"
+      ? Array(prices.length).fill(legend[name])
+      : prices;
 
     const dash = ["Highest", "Lowest", "Average"].includes(name)
       ? "dash"
@@ -38,8 +39,10 @@ const ItemGraph = ({ priceHistory, retailer }) => {
         x: dates,
         y: yVal,
         mode: "lines",
-        name: name,
-        line: { shape: "hv", fill: "tonexty", color: color, dash: dash },
+        name,
+        line: {
+          shape: "hv", fill: "tonexty", color, dash,
+        },
         hovertemplate: name === "Price History" ? hover : hoverDoted(name),
         type: "scatter",
       },
@@ -47,14 +50,38 @@ const ItemGraph = ({ priceHistory, retailer }) => {
         x: dates.slice(-1),
         y: yVal.slice(-1),
         mode: "markers+text",
-        name: name,
-        line: { color: color },
+        name,
+        line: { color },
         text: yVal.slice(-1)[0],
         textposition: "middle right",
         showlegend: false,
         type: "scatter",
       },
     ]);
+  };
+
+  const getAverage = (data) => {
+    const numericData = data.map(Number);
+    const sum = numericData.reduce(
+      (acc, val) => acc + (Number.isNaN(val) ? 0 : val),
+      0,
+    );
+    const average = data.length > 0 ? sum / data.length : 0;
+
+    return average.toFixed(2);
+  };
+
+  const yPadding = (data) => {
+    const maxPrice = Math.max(...data);
+
+    if (maxPrice >= 600) {
+      return 50;
+    } if (maxPrice >= 400) {
+      return 30;
+    } if (maxPrice >= 200) {
+      return 20;
+    }
+    return 10;
   };
 
   useEffect(() => {
@@ -135,31 +162,6 @@ const ItemGraph = ({ priceHistory, retailer }) => {
     });
   }, [legend, graph, prices]);
 
-  const getAverage = (data) => {
-    const numericData = data.map(Number);
-    const sum = numericData.reduce(
-      (acc, val) => acc + (isNaN(val) ? 0 : val),
-      0
-    );
-    const average = data.length > 0 ? sum / data.length : 0;
-
-    return average.toFixed(2);
-  };
-
-  const yPadding = (data) => {
-    const maxPrice = Math.max(...data);
-
-    if (maxPrice >= 600) {
-      return 50;
-    } else if (maxPrice >= 400) {
-      return 30;
-    } else if (maxPrice >= 200) {
-      return 20;
-    } else {
-      return 10;
-    }
-  };
-
   return (
     <Paper
       sx={{
@@ -178,15 +180,22 @@ const ItemGraph = ({ priceHistory, retailer }) => {
         color="inherit"
         m={1}
       >
-        {retailer} Price History
+        {retailer}
+        {' '}
+        Price History
       </Typography>
       <Divider light />
       <Grid container m={2} spacing={2}>
         <ItemLegend legend={legend} />
       </Grid>
-      <Grid id="graph" container></Grid>
+      <Grid id="graph" container />
     </Paper>
   );
+};
+
+ItemGraph.propTypes = {
+  priceHistory: PropTypes.array.isRequired,
+  retailer: PropTypes.string.isRequired,
 };
 
 export default ItemGraph;

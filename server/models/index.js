@@ -1,12 +1,11 @@
-'use strict';
-
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const process = require('process');
+
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../database/config/config.js')[env];
+const config = require(`${__dirname}/../database/config/config.js`)[env];
 const db = {};
 
 let sequelize;
@@ -16,7 +15,7 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(config.database, config.username, config.password, {
     host: config.host,
     dialect: config.dialect,
-    //automatically log the time taken for each Query
+    // automatically log the time taken for each Query
     benchmark: true,
     logging: (query, options) => {
       console.log(`Query executed: ${query}`);
@@ -26,20 +25,18 @@ if (config.use_env_variable) {
 
 fs
   .readdirSync(__dirname)
-  .filter(file => {
-    return (
-      file.indexOf('.') !== 0 &&
-      file !== basename &&
-      file.slice(-3) === '.js' &&
-      file.indexOf('.test.js') === -1
-    );
-  })
-  .forEach(file => {
+  .filter((file) => (
+    file.indexOf('.') !== 0
+      && file !== basename
+      && file.slice(-3) === '.js'
+      && file.indexOf('.test.js') === -1
+  ))
+  .forEach((file) => {
     const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
     db[model.name] = model;
   });
 
-Object.values(db).forEach(model => {
+Object.values(db).forEach((model) => {
   if (model.associate) {
     model.associate(db);
   }

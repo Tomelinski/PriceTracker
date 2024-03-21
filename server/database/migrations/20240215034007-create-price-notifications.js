@@ -1,4 +1,3 @@
-'use strict';
 const { PRICE_NOTIFICATION_ATTRIBUTES } = require("../../models/PriceNotification");
 
 module.exports = {

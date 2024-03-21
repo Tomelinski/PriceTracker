@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require("express");
 const passport = require("passport");
 const { isAuthenticated } = require("../middlewares/auth");
 const authController = require("../controllers/AuthController");
-const config = require("../database/config/app.config.js");
+const config = require("../database/config/app.config");
 
 const router = express.Router();
 
@@ -18,7 +18,7 @@ router.get(
   }),
   (req, res) => {
     res.status(200).send("Authenticated with Google");
-  }
+  },
 );
 
 router.get(
@@ -29,23 +29,23 @@ router.get(
   }),
   (req, res) => {
     res.status(200).send("Authenticated with Google");
-  }
+  },
 );
 
-
 // router.post('/login', authController.login);
-router.post('/login', 
-  passport.authenticate('local', {
+router.post(
+  "/login",
+  passport.authenticate("local", {
     failureRedirect: `${config.development.url}:${config.development.client}/login`,
     successRedirect: `${config.development.url}:${config.development.client}/`,
   }),
   (req, res) => {
     res.status(200).send("User authenticated");
-  }
+  },
 );
 
-router.post('/register', authController.register);
+router.post("/register", authController.register);
 
-router.get('/logout', authController.logout);
+router.get("/logout", authController.logout);
 
 module.exports = router;

@@ -1,39 +1,63 @@
-import { loginUser, getGoogleUser, registerUser, logout } from '../api/Auth';
+import {
+  loginUser, getGoogleUser, registerUser, logout,
+} from '../api/Auth';
 
 class AuthService {
-  async login(username, password) {
-    const response = await loginUser({ username, password });
+  static async login(username, password) {
+    try {
+      const response = await loginUser({ username, password });
 
-    console.log('Normal logged in');
-    if (response.accessToken) {
-      localStorage.setItem("user", JSON.stringify(response));
-    }
+      console.log('Normal logged in');
+      if (response.accessToken) {
+        localStorage.setItem("user", JSON.stringify(response));
+      }
 
-    return response;
-  }
-
-  async getGoogleUser() {
-    const response = await getGoogleUser();
-    console.log('google logged in');
-    return response;
-  }
-
-  logout() {
-    logout();
-    localStorage.removeItem("user");
-  }
-
-  async register(username, password) {
-    const response = await registerUser({ username, password });
-
-    if (response.sucess) {
-        console.log("user registered");
-    } else {
-        console.log("an error has occured");
+      return response;
+    } catch (error) {
+      console.error("Error during login:", error);
+      throw error;
     }
   }
 
-  getCurrentUser() {
+  static async getGoogleUser() {
+    try {
+      const response = await getGoogleUser();
+      console.log('Google logged in');
+      return response;
+    } catch (error) {
+      console.error("Error while getting Google user:", error);
+      throw error;
+    }
+  }
+
+  static logout() {
+    try {
+      logout();
+      localStorage.removeItem("user");
+    } catch (error) {
+      console.error("Error during logout:", error);
+      throw error;
+    }
+  }
+
+  static async register(username, password) {
+    try {
+      const response = await registerUser({ username, password });
+
+      if (response.success) {
+        console.log("User registered");
+      } else {
+        console.log("An error has occurred");
+      }
+
+      return response;
+    } catch (error) {
+      console.error("Error during registration:", error);
+      throw error;
+    }
+  }
+
+  static getCurrentUser() {
     return JSON.parse(localStorage.getItem("user"));
   }
 }
