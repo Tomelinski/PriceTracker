@@ -1,5 +1,6 @@
-const paginate = require("../helpers/route/pagination");
-const { PriceNotification, User, Item } = require("../models");
+// const paginate = require("../helpers/route/pagination");
+const userPagination = require("../helpers/route/userPagination");
+const { PriceNotification, Item } = require("../models");
 
 const getUserNotificationIds = async (req, res) => {
   try {
@@ -26,30 +27,30 @@ const getUserNotificationIds = async (req, res) => {
 const getUserNotificationItems = async (req, res) => {
   try {
     const { userId } = req.params;
+    const association = 'notifications';
     const page = req.query.page || 1;
     const limit = req.query.limit || 3;
+    const include = {
+      include: [
+        {
+          model: Item,
+          as: association,
+          through: {
+            attributes: ["threshold"],
+          },
+        },
+      ],
+    };
 
-    const result = await paginate(
-      User,
-      {
-        id: userId,
-      },
+    const result = await userPagination(
+      association,
+      userId,
       page,
       limit,
-      {
-        include: [
-          {
-            model: Item,
-            as: "notifications",
-            through: {
-              attributes: ["threshold"],
-            },
-          },
-        ],
-      },
+      include,
     );
 
-    res.json(result);
+    res.status(200).json(result);
   } catch (e) {
     console.log("error: ", e);
     res.status(500).json({ message: "Unexpected error occurred", error: e });

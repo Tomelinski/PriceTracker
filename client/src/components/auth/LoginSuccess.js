@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-export default function LoginSuccess() {
+const LoginSuccess = () => {
   useEffect(() => {
     setTimeout(() => {
       window.close();
@@ -8,4 +8,6 @@ export default function LoginSuccess() {
   }, []);
 
   return <div>You have Logged in</div>;
-}
+};
+
+export default LoginSuccess;

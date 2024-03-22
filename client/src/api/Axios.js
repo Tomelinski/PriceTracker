@@ -32,13 +32,7 @@ export const fetchDealItems = async (inStoreOnly, limit, page = 1) => {
     const url = SERVER_ROUTE.API.DEALS;
     const params = { inStoreOnly, limit, page };
 
-    const response = await api.get(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      params,
-    });
+    const response = await api.get(url, { params });
 
     if (response.status === 200) {
       return response.data;

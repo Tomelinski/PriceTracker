@@ -29,9 +29,9 @@ const UserContent = () => {
         const isFavorited = favorites.includes(productId);
 
         if (isFavorited) {
-          await deleteFavorite(auth.userData.id, productId);
+          await deleteFavorite(auth.user.id, productId);
         } else {
-          await createFavorite(auth.userData.id, productId);
+          await createFavorite(auth.user.id, productId);
         }
 
         setFavorites((prevFavorites) => (isFavorited
@@ -49,11 +49,9 @@ const UserContent = () => {
         const isActiveNotification = notifications.includes(productId);
 
         if (isActiveNotification) {
-          console.log(`delete${productId}`);
-          await deleteNotification(auth.userData.id, productId);
+          await deleteNotification(auth.user.id, productId);
         } else {
-          console.log(`create${productId}`);
-          await createNotification(auth.userData.id, productId, threshold);
+          await createNotification(auth.user.id, productId, threshold);
         }
 
         setNotifications((prevNotifications) => (isActiveNotification
@@ -69,7 +67,7 @@ const UserContent = () => {
     const getFavorites = async () => {
       try {
         if (auth?.isLoggedIn) {
-          const favoritesResponse = await fetchFavoriteIds(auth.userData.id);
+          const favoritesResponse = await fetchFavoriteIds(auth.user.id);
 
           if (favoritesResponse) {
             setFavorites(favoritesResponse);
@@ -87,12 +85,12 @@ const UserContent = () => {
     const getProducts = async () => {
       try {
         const favProductsResponse = await fetchFavoriteItems(
-          auth.userData.id,
+          auth.user.id,
           favoritesPerPage,
         );
 
-        if (favProductsResponse) {
-          setFavoriteProducts(favProductsResponse);
+        if (favProductsResponse?.data) {
+          setFavoriteProducts(favProductsResponse.data);
         }
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -106,12 +104,12 @@ const UserContent = () => {
     const getProducts = async () => {
       try {
         const notifProductsResponse = await fetchNotificationItems(
-          auth.userData.id,
-          favoritesPerPage,
+          auth.user.id,
+          notificationsPerPage,
         );
 
-        if (notifProductsResponse) {
-          setNotificationProducts(notifProductsResponse);
+        if (notifProductsResponse?.data) {
+          setNotificationProducts(notifProductsResponse.data);
         }
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -126,7 +124,7 @@ const UserContent = () => {
       try {
         if (auth?.isLoggedIn) {
           const notificationsResponse = await fetchNotificationIds(
-            auth.userData.id,
+            auth.user.id,
           );
 
           if (notificationsResponse) {
@@ -164,9 +162,6 @@ const UserContent = () => {
     }
     return false;
   };
-
-  console.log(favoriteProducts);
-  console.log(notificationProducts);
 
   return (
     <Grid container justifyContent="center">

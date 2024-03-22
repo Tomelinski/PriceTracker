@@ -57,7 +57,7 @@ const getItem = async (req, res) => {
     return res.status(500).json({ error: e.message });
   }
 
-  return res.json(result);
+  return res.status(200).json(result);
 };
 
 const getFlyer = async (req, res) => {
@@ -213,7 +213,7 @@ const getDeals = async (req, res) => {
       order: [["dealScore", "DESC"]],
     };
 
-    const { totalCount, data } = await paginate(
+    const result = await paginate(
       Item,
       conditions,
       page,
@@ -221,7 +221,7 @@ const getDeals = async (req, res) => {
       order,
     );
 
-    return res.json({ totalCount, data });
+    return res.status(200).json(result);
   } catch (e) {
     console.error("Error fetching deals:", e);
     return res.status(500).json({ error: "Internal Server Error" });

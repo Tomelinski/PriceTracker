@@ -6,7 +6,7 @@ import AuthContext from "../../../context/authContext";
 
 const UserBanner = () => {
   const auth = useContext(AuthContext);
-  const { name, emailAddress } = auth.userData;
+  const { name, emailAddress } = auth.user;
 
   return (
     <Paper

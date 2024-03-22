@@ -11,9 +11,9 @@ import {
 } from "@mui/material";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../api/Auth";
 import RegisterSchema from '../../schemas/RegisterSchema';
-import {  useNavigate } from "react-router-dom";
 import { AUTH_ROUTE } from "../../constants/Constants";
 
 const Register = () => {
@@ -28,7 +28,7 @@ const Register = () => {
     try {
       const response = await registerUser(data);
       if (response.status === 200) {
-        navigate(AUTH_ROUTE.LOGIN); 
+        navigate(AUTH_ROUTE.LOGIN);
       }
     } catch (error) {
       console.log(error);
@@ -127,13 +127,15 @@ const Register = () => {
           <Box align="center">
             <Grid item>
               <Typography align="center" mt={2}>
-                Already have an account?{" "}
+                Already have an account?
+                {" "}
                 <Link href={AUTH_ROUTE.LOGIN}>Sign in</Link>
               </Typography>
             </Grid>
             <Grid item>
               <Typography align="center" mt={2}>
-                Register an account with{" "}
+                Register an account with
+                {" "}
                 <Link href={AUTH_ROUTE.LOGIN_GOOGLE}>Google here</Link>
               </Typography>
             </Grid>

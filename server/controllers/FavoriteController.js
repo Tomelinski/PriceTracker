@@ -1,5 +1,6 @@
-const paginate = require("../helpers/route/pagination");
-const { Favorite, User, Item } = require("../models");
+// const paginate = require("../helpers/route/pagination");
+const userPagination = require("../helpers/route/userPagination");
+const { Favorite, Item } = require("../models");
 
 const getUserFavoriteIds = async (req, res) => {
   try {
@@ -12,7 +13,7 @@ const getUserFavoriteIds = async (req, res) => {
     if (userFavorites?.length > 0) {
       const favoriteIds = userFavorites.map((favorite) => favorite.itemId);
 
-      res.json(favoriteIds);
+      res.status(200).json(favoriteIds);
     } else {
       res.json([]);
     }
@@ -24,30 +25,30 @@ const getUserFavoriteIds = async (req, res) => {
 const getUserFavoriteItems = async (req, res) => {
   try {
     const { userId } = req.params;
+    const association = 'favorites';
     const page = req.query.page || 1;
     const limit = req.query.limit || 3;
+    const include = {
+      include: [
+        {
+          model: Item,
+          as: association,
+          through: {
+            attributes: [],
+          },
+        },
+      ],
+    };
 
-    const result = await paginate(
-      User,
-      {
-        id: userId,
-      },
+    const result = await userPagination(
+      association,
+      userId,
       page,
       limit,
-      {
-        include: [
-          {
-            model: Item,
-            as: "favorites",
-            through: {
-              attributes: [],
-            },
-          },
-        ],
-      },
+      include,
     );
 
-    res.json(result);
+    res.status(200).json(result);
   } catch (e) {
     console.log("error: ", e);
     res.status(500).json({ message: "Unexpected error occurred", error: e });

@@ -28,9 +28,9 @@ const ItemHome = () => {
         const isFavorited = favorites.includes(productId);
 
         if (isFavorited) {
-          await deleteFavorite(auth.userData.id, productId);
+          await deleteFavorite(auth.user.id, productId);
         } else {
-          await createFavorite(auth.userData.id, productId);
+          await createFavorite(auth.user.id, productId);
         }
 
         setFavorites((prevFavorites) => (isFavorited
@@ -46,7 +46,7 @@ const ItemHome = () => {
     const getFavorites = async () => {
       try {
         if (auth?.isLoggedIn) {
-          const favoritesResponse = await fetchFavoriteIds(auth.userData.id);
+          const favoritesResponse = await fetchFavoriteIds(auth.user.id);
 
           if (favoritesResponse) {
             setFavorites(favoritesResponse);
@@ -64,14 +64,11 @@ const ItemHome = () => {
     try {
       if (auth?.isLoggedIn) {
         const isActiveNotification = notifications.includes(productId);
-        console.log(`active${isActiveNotification}`);
 
         if (isActiveNotification) {
-          console.log(`delete${productId}`);
-          await deleteNotification(auth.userData.id, productId);
+          await deleteNotification(auth.user.id, productId);
         } else {
-          console.log(`create${productId}`);
-          await createNotification(auth.userData.id, productId, threshold);
+          await createNotification(auth.user.id, productId, threshold);
         }
 
         setNotifications((prevNotifications) => (isActiveNotification
@@ -88,7 +85,7 @@ const ItemHome = () => {
       try {
         if (auth?.isLoggedIn) {
           const notificationsResponse = await fetchNotificationIds(
-            auth.userData.id,
+            auth.user.id,
           );
 
           if (notificationsResponse) {

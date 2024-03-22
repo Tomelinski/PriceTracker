@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import {
   AppBar,
   Box,
@@ -33,7 +33,7 @@ const theme = createTheme({
 });
 
 const Nav = () => {
-  const auth = React.useContext(AuthContext);
+  const auth = useContext(AuthContext);
   const navigate = useNavigate();
   const handleLogout = auth.logout;
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -53,7 +53,7 @@ const Nav = () => {
   const handleCloseUserMenu = async (setting) => {
     switch (setting) {
       case "Profile":
-        navigate(ROUTE.USER(auth.userData.id));
+        navigate(ROUTE.USER(auth.user.id));
         break;
       case "Logout":
         await handleLogout();

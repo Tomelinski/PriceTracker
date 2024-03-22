@@ -48,7 +48,7 @@ const ItemSpecList = ({ specs }) => (
 );
 
 ItemSpecList.propTypes = {
-  specs: PropTypes.array.isRequired,
+  specs: PropTypes.object.isRequired,
 };
 
 export default ItemSpecList;
